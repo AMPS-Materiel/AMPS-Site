@@ -12,16 +12,22 @@
       color: #333;
     }
     header {
-      <div style="display: flex; justify-content: flex-start; padding: 10px;">
-  <img src="image0.png" alt="Logo AMPS" style="height: 40px;">
-</div>
       background-color: #0056A3;
       color: white;
       padding: 20px 0;
-      text-align: center
+      text-align: center;
+      position: relative;
     }
     header h1 {
       font-size: 2.5em;
+    }
+    header .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    header .logo img {
+      height: 40px;
     }
     nav {
       display: flex;
@@ -73,7 +79,10 @@
 <body>
 
 <header>
-  <h1>AMPS - Vente et Rachat de Machines-D'occassions </h1>
+  <div class="logo">
+    <img src="image0.png" alt="Logo AMPS">
+  </div>
+  <h1>AMPS - Vente et Rachat de Machines-D'occassions</h1>
   <p>Des solutions industrielles de qualité pour votre entreprise</p>
 </header>
 
@@ -83,6 +92,7 @@
   <a href="#about">À propos</a>
   <a href="#contact">Contact</a>
 </nav>
+
 
 <section id="home">
   <h2>Bienvenue chez AMPS</h2>
