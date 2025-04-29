@@ -11,47 +11,48 @@
       background-color: #f4f4f4;
       color: #333;
     }
+
     header {
       background-color: #0056A3;
       color: white;
       padding: 20px 0;
       text-align: center;
-      position: sticky;
-      top: 0;
+      position: relative;
+    }
+
+    header .logo {
+      position: fixed;
+      top: 10px;
+      left: 10px;
       z-index: 1000;
     }
+
+    header .logo img {
+      height: 80px;
+    }
+
     header h1 {
       font-size: 2.5em;
     }
-    header .logo {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
-    header .logo img {
-      height: 80px;
-      background-color: white;
-      padding: 5px;
-      border-radius: 5px;
-    }
+
     nav {
       display: flex;
       justify-content: center;
       background-color: #333;
       padding: 10px;
-      position: sticky;
-      top: 140px;
-      z-index: 999;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       padding: 10px 20px;
       margin: 0 10px;
     }
+
     nav a:hover {
       background-color: #444;
     }
+
     section {
       max-width: 1200px;
       margin: auto;
@@ -60,17 +61,20 @@
       margin-top: 20px;
       border-radius: 8px;
     }
+
     .machine-list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
+
     .machine-item {
       border: 1px solid #ddd;
       padding: 20px;
       border-radius: 8px;
       background-color: #f9f9f9;
     }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -78,6 +82,7 @@
       color: white;
       margin-top: 40px;
     }
+
     footer a {
       color: white;
       text-decoration: none;
