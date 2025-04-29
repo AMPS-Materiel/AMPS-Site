@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AMPS - Vente et Rachat de Machines-D’occasions</title>
+  <title>AMPS - Vente et Rachat de Machines d’Occasion</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -82,6 +82,11 @@
       padding: 20px;
       border-radius: 8px;
       background-color: #f9f9f9;
+      transition: transform 0.2s;
+    }
+
+    .machine-item:hover {
+      transform: translateY(-5px);
     }
 
     .machine-item img {
@@ -89,6 +94,12 @@
       height: 300px;
       object-fit: cover;
       border-radius: 4px;
+    }
+
+    .machine-item h3 {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #0056A3;
     }
 
     footer {
@@ -104,14 +115,37 @@
       text-decoration: none;
     }
 
+    /* FORMULAIRE */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form label {
+      font-weight: bold;
+    }
+
     form input,
     form textarea {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      margin-bottom: 15px;
+      padding: 12px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    form input[type="submit"] {
+      background-color: #0056A3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #003d73;
     }
 
     @media (max-width: 600px) {
@@ -136,8 +170,8 @@
   <div class="logo">
     <img src="image0.png" alt="Logo AMPS">
   </div>
-  <h1>AMPS - Vente et Rachat de Machines-D'occassions</h1>
-  <p>Donner une seconde vie à vos machines</p>
+  <h1>AMPS - Vente et Rachat de Machines d’Occasion</h1>
+  <p>Donnez une seconde vie à vos équipements industriels</p>
 </header>
 
 <nav>
@@ -149,66 +183,120 @@
 
 <section id="home">
   <h2>Bienvenue chez AMPS</h2>
-  <p>Spécialiste du rachat et de la vente de machines industrielles d’occasion, AMPS vous accompagne...</p>
-  <!-- Texte d'intro ici (je laisse volontairement raccourci pour lisibilité, tu peux y remettre ton contenu complet) -->
-</section>
+  <p>Spécialiste du rachat et de la vente de machines industrielles d’occasion, AMPS vous accompagne dans toutes les étapes de la gestion de vos équipements. Nous intervenons sur un large éventail de machines, quelle que soit leur typologie ou leur secteur d’activité.<p>
 
+<p>Notre engagement : vous proposer des solutions sur mesure, adaptées à vos besoins spécifiques et à vos délais. Grâce à une estimation rapide par photos en 24 à 48 heures et une planification d’enlèvement réactive, nous mettons tout en œuvre pour simplifier et accélérer vos démarches.<p>
+
+<p>Chez AMPS, nous reprenons vos équipements sans exigence de garantie. Nous prenons en charge l’ensemble du processus : démontage, manutention, chargement, transport… Aucune contrainte pour vous. Le paiement intégral est effectué avant l’enlèvement, pour une transparence et une sécurité totales.
+
+<p>Notre priorité est votre sérénité et de travailler sur le long terme ensemble. Faites confiance à un partenaire engagé, qui respecte ses engagements et valorise au mieux vos équipements.<p>
+
+
+
+Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement.</p>
+</section>
 <section id="machines">
-  <h2>Nos Machines en Vente</h2>
+  <h2>Nos Machines en Stock</h2>
   <div class="machine-list">
     <div class="machine-item">
-      <img src="AMADA.jpg" alt="Machine 1">
+      <img src="AMADA.jpg" alt="Presse Plieuse AMADA HFE 100-3">
       <h3>Presse Plieuse AMADA HFE 100-3</h3>
-      <p>Longueur : 3000 mm</p>
-      <p>Force : 100 Tonnes</p>
-      <p>Année : 2001</p>
-      <p>Très bon état, toujours en fonctionnement</p>
-      <p><strong>Prix: 21 000€</strong></p>
+      <p><strong>Longueur :</strong> 3000 mm</p>
+      <p><strong>Force :</strong> 100 tonnes</p>
+      <p><strong>Année :</strong> 2001</p>
+      <p>Machine en très bon état, toujours en fonctionnement.</p>
+      <p><strong>Prix :</strong> 21 000 €</p>
     </div>
 
     <div class="machine-item">
-      <img src="hurco.jpg" alt="Machine 2">
-      <h3>Centre d’usinage Vertical Hurco VM10</h3>
-      <p>Année 2011</p>
-      <p>En fonctionnement, vidéo disponible</p>
-      <p><strong>Prix: 15 000€</strong></p>
+      <img src="hurco.jpg" alt="Centre d’usinage Hurco VM10">
+      <h3>Centre d’Usinage Vertical Hurco VM10</h3>
+      <p><strong>Année :</strong> 2011</p>
+      <p>Fonctionne parfaitement. Vidéo de démonstration disponible.</p>
+      <p><strong>Prix :</strong> 15 000 €</p>
     </div>
 
     <div class="machine-item">
-      <img src="haas.jpg" alt="Machine 3">
-      <h3>Centre d’usinage HAAS VF-9</h3>
-      <p>Année 2006</p>
-      <p>Double convoyeur à copeaux</p>
-      <p>Très bon état, visible en fonctionnement</p>
-      <p><strong>Prix: 25 000€</strong></p>
+      <img src="haas.jpg" alt="Centre d’usinage HAAS VF-9">
+      <h3>Centre d’Usinage HAAS VF-9</h3>
+      <p><strong>Année :</strong> 2006</p>
+      <p>Équipé d’un double convoyeur à copeaux. Machine en excellent état.</p>
+      <p><strong>Prix :</strong> 25 000 €</p>
     </div>
   </div>
 </section>
 
 <section id="about">
-  <h2>Qui sommes-nous</h2>
-  <p>Nous rachetons tout type de matériel industriel sans garantie, dans l’état. Nous nous chargeons de tout...</p>
-</section>
+  <h2>Nous vous proposons le rachat de tout type de matériel industriel d’occasion, dans l’état où il se trouve. </h2> 
 
-<section id="contact">
+<p>Groupes électrogènes<p>
+<p>Transformateurs<p>
+<p>Groupe froid<p>
+<p>Turbines<p>
+<p>Motopompe<p>
+<p>Machines-outils<p>
+<p>Machine à bois,Alu,PVC<p>
+<p>Matériel de travaux publics (TP)<p>
+<p>Levage chariot élévateur Nacelles<p>
+<p>Véhicules utilitaires et de société<p>
+<p>Je rachète ces équipements sans garantie de votre part. Pour faciliter la transaction, je prends en charge le démontage, la manutention, le chargement et le transport. <p>
+<p>Nous nous occupons de tout <p>
+<p>Pour toute évaluation, merci de m’envoyer quelques photos et informations par email. Je me déplace dans toute la France pour évaluer vos besoins. <p>
+
+<p>N’hésitez pas à me contacter pour toute question. <p>
+
+<p>AMPS<p>
+<p>Anthony ZOTOFF<p>
+<p>Linge direct : 06 81 61 00 32    Tel : 09 54 48 62 21 <p>
+<p>Email : amps.materiel@gmail.com<p>
+<div style="text-align: center; margin-top: 40px;">
+  <h3>Suivez-nous</h3>
+  <div style="display: inline-flex; gap: 15px; align-items: center; justify-content: center;">
+    <a href="https://www.linkedin.com/in/anthony-zotoff" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="35">
+    </a>
+    <a href="https://www.instagram.com/ampsfrance" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="35">
+    </a>
+    <a href="https://www.facebook.com/AmpsVentesExport?locale=fr_FR" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" 
+       alt="Facebook Amps Ventes Export" 
+       style="width: 32px; height: 32px; vertical-align: middle;">
+  <span style="margin-left: 8px; font-family: Arial, sans-serif; font-size: 16px; color: #1877f2;">
+  </span>
+</a>
+    <a href="https://x.com/anthonyzot22552" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter (X)" width="35">
+    </a>
+    <a href="https://www.tiktok.com/@ampsfrance" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" width="35">
+    </a>
+  </div>
+</div>
+
+    </a></h3>
+
+
+
+
+
+    <p><section id="contact"><p>
   <h2>Contactez-nous</h2>
   <form action="#">
-    <label for="name">Nom</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required></textarea>
-
+    <label for="name">Nom</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="message">Message</label><br>
+    <textarea id="message" name="message" required></textarea><br><br>
     <input type="submit" value="Envoyer">
   </form>
 </section>
 
 <footer>
-  <p>&copy; 2025 AMPS. Tous droits réservés. | <a href="mailto:amps.materiel@gmail.com">amps.materiel@gmail.com</a></p>
-  <p>Ligne directe : 06 81 61 00 32</p>
+  
+
+<p>&copy; 2025 AMPS. Tous droits réservés. | <a href="mailto:amps.materiel@gmail.com">amps.materiel@gmail.com</a></p>Linge direct : 06 81 61 00 32<p>
 </footer>
 
 </body>
