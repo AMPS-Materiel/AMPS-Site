@@ -2,49 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Bande avec logo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMPS - Vente et Rachat de Machines-D’occasions</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .bande-logo {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: white;
-      text-align: center;
-      padding: 10px 0;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      z-index: 9999;
-    }
-
-    .bande-logo img {
-      height: 50px;
-    }
-
-    .contenu {
-      margin-top: 80px; /* espace pour ne pas être caché par la bande */
-      padding: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="bande-logo">
-    <img src="image0.png" alt="Logo">
-  </div>
-
-  <div class="contenu">
-    <p>Fais défiler la page pour voir si la bande reste visible.</p>
-    <p style="height: 2000px;"></p>
-  </div>
-
-</body>
-</html>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
       font-family: Arial, sans-serif;
       margin: 0;
       background-color: #f4f4f4;
@@ -53,9 +15,12 @@
     header {
       background-color: #0056A3;
       color: white;
-      padding: 20px 20px 80px;
+      padding: 20px 0;
       text-align: center;
       position: relative;
+    }
+    header h1 {
+      font-size: 2.5em;
     }
     header .logo {
       position: absolute;
@@ -63,12 +28,10 @@
       left: 10px;
     }
     header .logo img {
-      height: 60px;
-      max-width: 100%;
+      height: 40px;
     }
     nav {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       background-color: #333;
       padding: 10px;
@@ -77,21 +40,22 @@
       color: white;
       text-decoration: none;
       padding: 10px 20px;
-      margin: 5px;
+      margin: 0 10px;
     }
     nav a:hover {
       background-color: #444;
     }
     section {
       max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
+      margin: auto;
+      padding: 40px;
       background-color: white;
+      margin-top: 20px;
       border-radius: 8px;
     }
     .machine-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
     .machine-item {
@@ -115,12 +79,21 @@
 </head>
 <body>
 
+<header>
+  <div class="logo">
+    <img src="image0.png" alt="Logo AMPS" style="height: 250px;">
+  </div>
+  <h1>AMPS - Vente et Rachat de Machines-D'occassions</h1>
+  <p>Donner une seconde vie à vos machines</p>
+</header>
+
 <nav>
   <a href="#home">Accueil</a>
   <a href="#machines">Nos Machines</a>
   <a href="#about">À propos</a>
   <a href="#contact">Contact</a>
 </nav>
+
 
 <section id="home">
   <h2>Bienvenue chez AMPS</h2>
