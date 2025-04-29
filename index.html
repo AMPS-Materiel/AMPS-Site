@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMPS - Vente et Rachat de Machines-Outils</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #1E2A47;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5em;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+    }
+    nav a:hover {
+      background-color: #444;
+    }
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px;
+      background-color: white;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+    .machine-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .machine-item {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1E2A47;
+      color: white;
+      margin-top: 40px;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>AMPS - Vente et Rachat de Machines-Outils</h1>
+  <p>Des solutions industrielles de qualité pour votre entreprise</p>
+</header>
+
+<nav>
+  <a href="#home">Accueil</a>
+  <a href="#machines">Nos Machines</a>
+  <a href="#about">À propos</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+  <h2>Bienvenue chez AMPS</h2>
+  <p>AMPS est une entreprise spécialisée dans la vente et le rachat de machines-outils industrielles. Nous fournissons des solutions adaptées à vos besoins, avec un large choix de machines disponibles à la vente.</p>
+</section>
+
+<section id="machines">
+  <h2>Nos Machines en Vente</h2>
+  <div class="machine-list">
+    <div class="machine-item">
+      <img src="https://via.placeholder.com/300x200" alt="Machine 1" />
+      <h3>Machine A</h3>
+      <p>Description de la machine A. Spécifications, état, prix. Contactez-nous pour plus d'infos.</p>
+      <p><strong>Prix: 10 000€</strong></p>
+    </div>
+    <div class="machine-item">
+      <img src="https://via.placeholder.com/300x200" alt="Machine 2" />
+      <h3>Machine B</h3>
+      <p>Description de la machine B. Spécifications, état, prix. Contactez-nous pour plus d'infos.</p>
+      <p><strong>Prix: 15 000€</strong></p>
+    </div>
+    <div class="machine-item">
+      <img src="https://via.placeholder.com/300x200" alt="Machine 3" />
+      <h3>Machine C</h3>
+      <p>Description de la machine C. Spécifications, état, prix. Contactez-nous pour plus d'infos.</p>
+      <p><strong>Prix: 20 000€</strong></p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>À propos de nous</h2>
+  <p>AMPS est un acteur clé dans l'industrie des machines-outils. Nous offrons des solutions fiables et économiques pour les entreprises cherchant à acheter ou revendre du matériel industriel de qualité.</p>
+</section>
+
+<section id="contact">
+  <h2>Contactez-nous</h2>
+  <form action="#">
+    <label for="name">Nom</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="message">Message</label><br>
+    <textarea id="message" name="message" required></textarea><br><br>
+    <input type="submit" value="Envoyer">
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 AMPS. Tous droits réservés. | <a href="mailto:contact@amps.com">contact@amps.com</a></p>
+</footer>
+
+</body>
+</html>
