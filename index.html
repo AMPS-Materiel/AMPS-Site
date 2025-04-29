@@ -8,6 +8,45 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .bande-logo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      text-align: center;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+    }
+
+    .bande-logo img {
+      height: 50px;
+    }
+
+    .contenu {
+      margin-top: 80px; /* espace pour ne pas être caché par la bande */
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bande-logo">
+    <img src="image0.png" alt="Logo">
+  </div>
+
+  <div class="contenu">
+    <p>Fais défiler la page pour voir si la bande reste visible.</p>
+    <p style="height: 2000px;"></p>
+  </div>
+
+</body>
+</html>
+
       background-color: #f4f4f4;
       color: #333;
     }
