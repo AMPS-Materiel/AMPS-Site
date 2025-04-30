@@ -329,13 +329,67 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
     z-index: 2;
     text-align: center;
   }
+<style>
+  .machine-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .machine-card {
+    width: 320px;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    transition: transform 0.2s ease;
+  }
+
+  .machine-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sold-overlay {
+    position: absolute;
+    top: 16px;
+    left: -35px;
+    transform: rotate(-45deg);
+    background: red;
+    color: white;
+    font-weight: bold;
+    padding: 5px 50px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 2;
+    text-align: center;
+  }
 </style>
 
 <section id="machines">
-  <h2>Nos Machines en Vente</h2>
+  <h2 style="text-align:center; font-size: 28px; margin-top: 30px;">Nos Machines en Vente</h2>
   <div class="machine-grid">
 
-    <!-- Machines disponibles -->
     <div class="machine-card">
       <div class="image-container">
         <img src="AMADA.jpg" alt="Presse Plieuse AMADA HFE 100-3">
@@ -453,45 +507,6 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
       FAIRE OFFRE</p>
     </div>
 
-    <!-- Machines vendues -->
-    <div class="machine-card">
-      <div class="image-container">
-        <img src="charmille330.jpg" alt="Charmilles Robofil 330">
-        <div class="sold-overlay">VENDU</div>
-      </div>
-      <h3>Charmilles Robofil 330</h3>
-      <p><strong>Année :</strong> 2000</p>
-      <p>Course : X=400mm, Y=300mm, Z=400mm</p>
-      <p>Axe U/V : ±30mm</p>
-      <p>Pièce max : 800x550x400mm / 1000kg</p>
-      <p>Table : 600x450mm</p>
-      <p>Fil : 0.1–0.3mm</p>
-      <p>Ra : 0.25 µm, précision ±0.005mm</p>
-      <p>Poids : 3500kg</p>
-      <p>En très bon état, fournie avec outillage</p>
-      <p>Vendu avec une Charmilles Robofil 240</p>
-      <p><strong>Prix du lot : 10 000€</strong></p>
-    </div>
-
-    <div class="machine-card">
-      <div class="image-container">
-        <img src="CHARMILLE240.jpg" alt="Charmilles Robofil 240">
-        <div class="sold-overlay">VENDU</div>
-      </div>
-      <h3>Charmilles Robofil 240</h3>
-      <p><strong>Année :</strong> 2001</p>
-      <p>Course : X=350mm, Y=220mm, Z=220mm</p>
-      <p>U/V : ±30mm</p>
-      <p>Pièce max : 860x530x220mm / 500kg</p>
-      <p>Table : 600x400mm</p>
-      <p>Fil : 0.15–0.33mm</p>
-      <p>Ra : 0.3 µm, précision ±0.002mm</p>
-      <p>Poids : 2500kg</p>
-      <p>En très bon état, fournie avec documentation</p>
-      <p>Vendu avec une Charmilles Robofil 330</p>
-      <p><strong>Prix du lot : 10 000€</strong></p>
-    </div>
-
     <div class="machine-card">
       <div class="image-container">
         <img src="fh.jpg" alt="Mazak FH 880">
@@ -507,15 +522,6 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
 
   </div>
 </section>
-
-
-</div>
-
-
-  </div>
-</section>
-
-
   </div>
 </section>
 <section id="about">
