@@ -281,16 +281,64 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
     z-index: 2;
     text-align: center;
   }
+<style>
+  .machine-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .machine-card {
+    width: 30%;
+    background: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sold-overlay {
+    position: absolute;
+    top: 20px;
+    left: -40px;
+    transform: rotate(-45deg);
+    background: red;
+    color: white;
+    font-weight: bold;
+    padding: 5px 60px;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 2;
+    text-align: center;
+  }
 </style>
 
 <section id="machines">
   <h2>Nos Machines en Vente</h2>
-  <div class="machine-list">
+  <div class="machine-grid">
 
-    <!-- Machine 1 -->
-    <div class="machine-item">
+    <!-- Machines disponibles -->
+    <div class="machine-card">
       <div class="image-container">
-        <img src="AMADA.jpg" alt="Presse Plieuse AMADA HFE 100-3" />
+        <img src="AMADA.jpg" alt="Presse Plieuse AMADA HFE 100-3">
       </div>
       <h3>Presse Plieuse AMADA HFE 100-3</h3>
       <p><strong>Longueur :</strong> 3000mm</p>
@@ -303,10 +351,9 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
       <p><strong>Prix : 21 000€</strong></p>
     </div>
 
-    <!-- Machine 2 -->
-    <div class="machine-item">
+    <div class="machine-card">
       <div class="image-container">
-        <img src="hurco.jpg" alt="Centre d’usinage Vertical Hurco VM10" />
+        <img src="hurco.jpg" alt="Centre d’usinage Vertical Hurco VM10">
       </div>
       <h3>Centre d’usinage Vertical Hurco VM10</h3>
       <p><strong>Année :</strong> 2011</p>
@@ -317,10 +364,9 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
       <p><strong>Prix : 15 000€</strong></p>
     </div>
 
-    <!-- Machine 3 -->
-    <div class="machine-item">
+    <div class="machine-card">
       <div class="image-container">
-        <img src="haas.jpg" alt="Centre d’usinage HAAS VF-9" />
+        <img src="haas.jpg" alt="Centre d’usinage HAAS VF-9">
       </div>
       <h3>Centre d’usinage HAAS VF-9</h3>
       <p>Chargeur 40 outils</p>
@@ -332,10 +378,86 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
       <p><strong>Prix : 25 000€</strong></p>
     </div>
 
-    <!-- Machine 4 -->
-    <div class="machine-item">
+    <div class="machine-card">
       <div class="image-container">
-        <img src="charmille330.jpg" alt="Charmilles Robofil 330" />
+        <img src="integrx400y.jpg" alt="MAZAK INTEGREX 400Y">
+      </div>
+      <h3>Tour CNC MAZAK INTEGREX 400Y 4 axes</h3>
+      <p>Année 2000<br>
+      Contre-pointe, convoyeur<br>
+      Tête de fraisage neuve<br>
+      Ø max : 610 mm<br>
+      Courses X/Y/Z : 580 / 210 / 1605 mm<br>
+      Indexation broche : 0.001°<br>
+      Alésage broche : 88 mm<br>
+      3000 rpm - Outils tournants : 6000 rpm<br>
+      Magasin 40 outils CAPTO C6<br>
+      Fournis avec outillage et documentation<br>
+      FAIRE OFFRE</p>
+    </div>
+
+    <div class="machine-card">
+      <div class="image-container">
+        <img src="ex910.jpg" alt="Takisawa EX-910">
+      </div>
+      <h3>Tour CNC Takisawa EX-910 - 5 axes</h3>
+      <p>Année 2007<br>
+      Fanuc 18i-TB<br>
+      8 outils motorisés - 17500H<br>
+      2 broches - 12 tourelles<br>
+      Ø max : 340 mm / Barre : 75 mm<br>
+      X/Y/Z = 710 / 245 / 160 mm<br>
+      Poids : 6500 kg<br>
+      Fournis avec outillage et documentation<br>
+      FAIRE OFFRE</p>
+    </div>
+
+    <div class="machine-card">
+      <div class="image-container">
+        <img src="citizen.jpg" alt="Citizen M32V">
+      </div>
+      <h3>Tour CNC Citizen M32V Cincom - 9 axes</h3>
+      <p>Année 2004 + Embarreur IEMCA BOSS 432R (2002)<br>
+      Ø max : 32 mm<br>
+      Broche : 8000 / 7000 tr/min<br>
+      1 tourelle (20 positions)<br>
+      3 contre-opérations<br>
+      Poids : 3200 kg<br>
+      Fournis avec outillage et documentation<br>
+      FAIRE OFFRE</p>
+    </div>
+
+    <div class="machine-card">
+      <div class="image-container">
+        <img src="mtv.jpg" alt="Mazak MTV 655/80N">
+      </div>
+      <h3>Centre d'usinage Mazak MTV 655/80N</h3>
+      <p>Année 1999<br>
+      CNC MATAROL M PLUS<br>
+      Palettisée, convoyeur à copeaux<br>
+      Visible en production<br>
+      Fournis avec outillage et documentation<br>
+      FAIRE OFFRE</p>
+    </div>
+
+    <div class="machine-card">
+      <div class="image-container">
+        <img src="mastu.jpg" alt="Matsuura Maxia Cublex 25">
+      </div>
+      <h3>Centre de fraisage et tournage Matsuura Maxia Cublex 25</h3>
+      <p>Année 2008 - CNC Siemens 840di<br>
+      5 axes - 40 palettes<br>
+      Chargeur 240 outils HSK<br>
+      Convoyeur à copeaux<br>
+      Fournis avec outillage et documentation<br>
+      FAIRE OFFRE</p>
+    </div>
+
+    <!-- Machines vendues -->
+    <div class="machine-card">
+      <div class="image-container">
+        <img src="charmille330.jpg" alt="Charmilles Robofil 330">
+        <div class="sold-overlay">VENDU</div>
       </div>
       <h3>Charmilles Robofil 330</h3>
       <p><strong>Année :</strong> 2000</p>
@@ -349,13 +471,11 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
       <p>En très bon état, fournie avec outillage</p>
       <p>Vendu avec une Charmilles Robofil 240</p>
       <p><strong>Prix du lot : 10 000€</strong></p>
-      <div class="sold-overlay">VENDU</div>
     </div>
 
-    <!-- Machine 5 -->
-    <div class="machine-item">
+    <div class="machine-card">
       <div class="image-container">
-        <img src="CHARMILLE240.jpg" alt="Charmilles Robofil 240" />
+        <img src="CHARMILLE240.jpg" alt="Charmilles Robofil 240">
         <div class="sold-overlay">VENDU</div>
       </div>
       <h3>Charmilles Robofil 240</h3>
@@ -371,10 +491,22 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
       <p>Vendu avec une Charmilles Robofil 330</p>
       <p><strong>Prix du lot : 10 000€</strong></p>
     </div>
+
+    <div class="machine-card">
+      <div class="image-container">
+        <img src="fh.jpg" alt="Mazak FH 880">
+        <div class="sold-overlay">VENDU</div>
+      </div>
+      <h3>Centre d'usinage Mazak FH 880</h3>
+      <p>Année 1999<br>
+      CNC MATAROL M PLUS<br>
+      Palettisée<br>
+      Visible en production<br>
+      Fournis avec outillage et documentation</p>
+    </div>
+
   </div>
 </section>
-
-<!-- Tu peux ensuite faire pareil pour les autres machines du bas en copiant le modèle de la div.image-container et de .sold-overlay pour celles qui sont vendues -->
 
 
 </div>
