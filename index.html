@@ -384,7 +384,24 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
     z-index: 2;
     text-align: center;
   }
-</style>
+</style>.vendu h3 {
+  display: none;
+}
+
+.sold-ribbon {
+  position: absolute;
+  top: 15px;
+  left: -40px;
+  transform: rotate(-45deg);
+  background-color: red;
+  color: white;
+  padding: 5px 50px;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
 
 <section id="machines">
   <h3>Nos Machines en Vente</h3>
@@ -523,17 +540,11 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
     </div>
 
     <!-- Machine 10 (Vendue) -->
-    <div class="machine-card">
-      <img src="fh.jpg" alt="Centre usinage Mazak FH 880">
-      <h3>Centre d'usinage Mazak FH 880</h3>
-      <p>Année 1999<br>
-      CNC MATAROL M PLUS<br>
-      Palettisée<br>
-      Visible en production<br>
-      En très bon état<br>
-      Fournis avec outillage et documentation</p>
-      <div class="sold">VENDU</div>
-    </div>
+<div class="machine-card vendu">
+  <div class="sold-ribbon">VENDU</div>
+  <img src="fh.jpg" alt="Centre usinage Mazak FH 880">
+  <h3>Centre d'usinage Mazak FH 880</h3>
+</div>
 
     <!-- Machine 11 -->
     <div class="machine-card">
