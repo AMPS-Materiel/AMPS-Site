@@ -197,95 +197,124 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
 </section>
 <section id="machines">
   <h2>Nos Machines en Vente</h2>
-  <div class="machine-list">
-    <div class="machine-item">
-      <img src="AMADA.jpg"style="width: 100%; height: 300px; object-fit: cover; border-radius: 4px;>"Machine 1" />
-      <h3>Presse Plieuse AMADA HFE 100-3</h3>
-     
-      </p>Longeur : 3000mn</p>
-      </p>Force : 100 Tonnes</p>
-      </p>Année 2001</p>
-      </p>en très bon état toujours en fonctionnement</p>
-      </p>Visible en production, vidéo disponible</p>
-      </p>Avec outillage</p>
-      </p>En très bon état</p>
-      </p>Fournis avec outillage documentation</p>
-      </p>En état de marche bon état</p>
-      <p><strong>Prix: 21 000€</strong></p>
-    </div>
-    <div class="machine-item">
-      <img src="hurco.jpg"style="width: 100%; height: 300px; object-fit: cover; border-radius: 4px;>"Machine 1" />
-      <h3>Centre d’usinage Vertical Hurco VM10</h3>
-      <p>Année 2011<p>
-      <p>Toujours en fonctionnement<p>
-      <p>Visible sous tension, vidéo disponible<p>
-      <p>En très bon état<p>
-      <p>Fournis avec outillage documentation<p>
-      <p> En état de marche bon état</p>
-      <p><strong>Prix: 15 000€</strong></p>
-    </div>
-   
-    <div class="machine-item">
-      <img src="haas.jpg"style="width: 100%; height: 300px; object-fit: cover; border-radius: 4px;>"Machine 1" />
-      <h3>Centre d’usinage HAAS VF-9</h3>
-      <p>Chargeur 40 outils<p>
-      <p>Double convoyeur à copeaux<p>
-      <p>Année 2006<p>
-      <p>En bon état toujours en fonction<p>
-      <p>Visible en fonctionnement<p>
-      <p>Vidéo disponible<p>
-      <p>En très bon état<p>
-      <p>Fournis avec outillage documentation<p>
-      <p>En état de marche bon état</p>
-      <p><strong>Prix: 25 000€</strong></p>
-    
-    
-              
-</section>
+  <style>
+  .machine-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .machine-item {
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    max-width: 400px;
+  }
+
+  .machine-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .machine-item {
+      flex: 1 1 calc(50% - 40px);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .machine-item {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+
 <section id="machines">
   <h2>Nos Machines en Vente</h2>
   <div class="machine-list">
-    <div class="machine-item">
-<img src="charmille330.jpg"style="width: 100%; height: 300px; object-fit: cover; border-radius: 4px;>"Machine 1" />
-      <h3>Charmilles Robofil 330</h3>      
-      <p>Année 2000<p>
-     <p>Course (axes X, Y, Z) : X = 400 mm, Y = 300 mm, Z = 400 mm. Course de l'axe U/V : U = ± 30 mm, V = ± 30 mm<p>
-     <p>essentiel pour les coupes coniques complexes. Dimensions maximales de la pièce : 800 mm x 550 mm x 400 mm.<p>
-    <p>Poids maximal de la pièce : 1 000 kg.<p>
-     <p> Dimensions de la table :600 mm x 450 mm. Capacité de diamètre de fil : 0,1 mm à 0,3 mm,<p>
-     <p>répondant à diverses exigences de coupe. <p>
-      <p>Finition de surface réalisable : Ra 0,25 µm. Précision de positionnement : ± 0,005<p>
-     <p>Dimensions de la table : 600 mm x 400 mm. <p>
-     <p> Capacité de diamètre de fil : 0,1 mm à 0,3 mm,<p> 
-     <p>répondant à diverses exigences de coupe. Finition de surface réalisable : Ra 0,25 µm. <p>
-     <p>Précision de positionnement : ± 0,005 mm. <p>
-     <p>Poids de la machine : environ 3 500 kg. <p>
-     <p>En très bon état Fournis avec outillage documentation <p>
-      <p>En état de marche bon état    <p>   
-      <p> Vendu avec une charmilles robofil 240</p>
-      <p><strong>Prix : du lot 10 000€</strong></p>
 
-  
- <p><div class="machine-item"><p>
-      <img src="CHARMILLE240.jpg"style="width: 100%; height: 300px; object-fit: cover; border-radius: 4px;>"Machine 1" />
+    <!-- Machine 1 -->
+    <div class="machine-item">
+      <img src="AMADA.jpg" alt="Presse Plieuse AMADA HFE 100-3" />
+      <h3>Presse Plieuse AMADA HFE 100-3</h3>
+      <p>Longueur : 3000mm</p>
+      <p>Force : 100 Tonnes</p>
+      <p>Année : 2001</p>
+      <p>En très bon état, toujours en fonctionnement</p>
+      <p>Visible en production, vidéo disponible</p>
+      <p>Avec outillage</p>
+      <p>Fournie avec documentation</p>
+      <p><strong>Prix : 21 000€</strong></p>
+    </div>
+
+    <!-- Machine 2 -->
+    <div class="machine-item">
+      <img src="hurco.jpg" alt="Centre d’usinage Vertical Hurco VM10" />
+      <h3>Centre d’usinage Vertical Hurco VM10</h3>
+      <p>Année : 2011</p>
+      <p>Toujours en fonctionnement</p>
+      <p>Visible sous tension, vidéo disponible</p>
+      <p>En très bon état</p>
+      <p>Fournie avec outillage et documentation</p>
+      <p><strong>Prix : 15 000€</strong></p>
+    </div>
+
+    <!-- Machine 3 -->
+    <div class="machine-item">
+      <img src="haas.jpg" alt="Centre d’usinage HAAS VF-9" />
+      <h3>Centre d’usinage HAAS VF-9</h3>
+      <p>Chargeur 40 outils</p>
+      <p>Double convoyeur à copeaux</p>
+      <p>Année : 2006</p>
+      <p>En bon état, toujours en fonction</p>
+      <p>Vidéo disponible</p>
+      <p>Fournie avec outillage et documentation</p>
+      <p><strong>Prix : 25 000€</strong></p>
+    </div>
+
+    <!-- Machine 4 -->
+    <div class="machine-item">
+      <img src="charmille330.jpg" alt="Charmilles Robofil 330" />
+      <h3>Charmilles Robofil 330</h3>
+      <p>Année : 2000</p>
+      <p>Course : X=400mm, Y=300mm, Z=400mm</p>
+      <p>Axe U/V : ±30mm</p>
+      <p>Pièce max : 800x550x400mm / 1000kg</p>
+      <p>Table : 600x450mm</p>
+      <p>Fil : 0.1–0.3mm</p>
+      <p>Ra : 0.25 µm, précision ±0.005mm</p>
+      <p>Poids : 3500kg</p>
+      <p>En très bon état, fournie avec outillage</p>
+      <p>Vendu avec une Charmilles Robofil 240</p>
+      <p><strong>Prix du lot : 10 000€</strong></p>
+    </div>
+
+    <!-- Machine 5 -->
+    <div class="machine-item">
+      <img src="CHARMILLE240.jpg" alt="Charmilles Robofil 240" />
       <h3>Charmilles Robofil 240</h3>
-      
-      <p>Année 2001<p>
-     <p>Course (axes X, Y, Z) : X = 350 mm, Y = 220 mm, Z = 220 mm. <p>
-     <p>Mouvement de l'axe U/V : U = ± 30 mm, V = ± 30 mm, <p>
-    <p>garantissant des coupes complexes et des effilements de précision. <p>
-     <p> Max. Taille de la pièce : 860 mm x 530 mm x 220 mm. <p>
-     <p>Max. Poids de la pièce : 500 kg. <p>
-     <p>Dimensions de la table : 600 mm x 400 mm. <p>
-     <p>Plage de diamètres de fil : généralement de 0,15 mm à 0,33 mm, <p> 
-     <p>ce qui permet une flexibilité de coupe. <p>
-     <p>Finition de surface réalisable : Ra 0,3 µm. Précision de positionnement : ± 0,002 mm. <p>
-     <p>Poids de la machine : environ 2 500 kg. <p>
-     <p>En très bon état Fournis avec outillage documentation <p>
-      <p>En état de marche bon état    <p>   
-      <p> Vendu avec une charmilles robofil 330</p>
-      <p><strong>Prix : du lot 10 000€</strong></p>
-    
+      <p>Année : 2001</p>
+      <p>Course : X=350mm, Y=220mm, Z=220mm</p>
+      <p>U/V : ±30mm</p>
+      <p>Pièce max : 860x530x220mm / 500kg</p>
+      <p>Table : 600x400mm</p>
+      <p>Fil : 0.15–0.33mm</p>
+      <p>Ra : 0.3 µm, précision ±0.002mm</p>
+      <p>Poids : 2500kg</p>
+      <p>En très bon état, fournie avec documentation</p>
+      <p>Vendu avec une Charmilles Robofil 330</p>
+      <p><strong>Prix du lot : 10 000€</strong></p>
+    </div>
+
+  </div>
+</section>
+
 
   </div>
 </section>
