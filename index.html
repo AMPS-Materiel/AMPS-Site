@@ -384,24 +384,47 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
     z-index: 2;
     text-align: center;
   }
-</style>.vendu h3 {
-  display: none;
-}
+<style>
+  .machine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
 
-.sold-ribbon {
-  position: absolute;
-  top: 15px;
-  left: -40px;
-  transform: rotate(-45deg);
-  background-color: red;
-  color: white;
-  padding: 5px 50px;
-  font-weight: bold;
-  font-size: 14px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  z-index: 10;
-}
+  .machine-card {
+    position: relative;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
 
+  .machine-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .machine-card.vendu p {
+    display: none;
+  }
+
+  .sold-ribbon {
+    position: absolute;
+    top: 15px;
+    left: -45px;
+    transform: rotate(-45deg);
+    background-color: red;
+    color: white;
+    padding: 5px 60px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+</style>
 
 <section id="machines">
   <h3>Nos Machines en Vente</h3>
@@ -539,27 +562,56 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
       <strong>FAIRE OFFRE</strong></p>
     </div>
 
-    <!-- Machine 10 (Vendue) -->
-<div class="machine-card vendu">
-  <div class="sold-ribbon">VENDU</div>
-  <img src="fh.jpg" alt="Centre usinage Mazak FH 880">
-  <h3>Centre d'usinage Mazak FH 880</h3>
-</div>
+  <div class="machine-card vendu">
+      <div class="sold-ribbon">VENDU</div>
+      <img src="fh.jpg" alt="Centre usinage Mazak FH 880">
+      <h3>Centre d'usinage Mazak FH 880</h3>
+    </div>
 
-    <!-- Machine 11 -->
-    <div class="machine-card">
+     <div class="machine-card">
       <img src="mastu.jpg" alt="Centre Matsuura Maxia Cublex 25">
       <h3>Centre de fraisage et tournage Matsuura Maxia Cublex 25</h3>
-      <p>Année 2008 - CNC Siemens 840di<br>
-      5 axes - 40 palettes<br>
-      Chargeur 240 outils HSK<br>
-      Convoyeur à copeaux<br>
-      En très bon état<br>
-      Fournis avec outillage et documentation<br>
-      <strong>FAIRE OFFRE</strong></p>
+      <p>Année 2008 - CNC Siemens 840di<br>5 axes - 40 palettes<br>Chargeur 240 outils HSK<br>Convoyeur à copeaux<br>Très bon état<br><strong>FAIRE OFFRE</strong></p>
     </div>
+    <div class="machine-card vendu">
+      <div class="sold-ribbon">VENDU</div>
+      <img src="bois.jpg" alt="Machine Bois">
+      <h3>Machine Bois</h3>
+    </div>
+
+    <div class="machine-card vendu">
+      <div class="sold-ribbon">VENDU</div>
+      <img src="camion.jpg" alt="Camion industriel">
+      <h3>Camion Industriel</h3>
+    </div>
+
+    <div class="machine-card vendu">
+      <div class="sold-ribbon">VENDU</div>
+      <img src="takamaz.jpg" alt="Tour Takamaz">
+      <h3>Tour CNC Takamaz</h3>
+    </div>
+
+    <div class="machine-card vendu">
+      <div class="sold-ribbon">VENDU</div>
+      <img src="sdmo.jpg" alt="Groupe SDMO">
+      <h3>Groupe Électrogène SDMO</h3>
+    </div>
+
+    <div class="machine-card vendu">
+      <div class="sold-ribbon">VENDU</div>
+      <img src="mecalac.jpg" alt="Pelle Mecalac">
+      <h3>Pelle Mécalac</h3>
+    </div>
+
+    <div class="machine-card vendu">
+      <div class="sold-ribbon">VENDU</div>
+      <img src="2000kva.jpg" alt="Transformateur 2000kVA">
+      <h3>MTU 2000 kVA</h3>
+    </div>
+
   </div>
 </section>
+
 
 <style>
   #machines {
