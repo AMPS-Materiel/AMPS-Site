@@ -38,7 +38,7 @@
       height: 100%;
       object-fit: cover;
       opacity: 0; /* Images initialement invisibles */
-      animation: fadeInOut 30s infinite; /* Animation du fondu */
+      animation: fadeInOut 25s infinite; /* Animation du fondu */
     }
 
     @keyframes fadeInOut {
@@ -47,28 +47,6 @@
       25%  { opacity: 1; }          /* Image reste visible */
       50%  { opacity: 0; }          /* Image disparaît (fade-out) */
       100% { opacity: 0; }          /* Image reste invisible à la fin */
-    }
-
-    .banner-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px 40px;
-      border-radius: 10px;
-      text-align: center;
-      color: #fff;
-      max-width: 90%;
-    }
-
-    .banner-text h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .banner-text p {
-      font-size: 18px;
     }
 
     /* STYLE DU RESTE DU SITE (header, nav, footer, etc.) */
@@ -203,10 +181,6 @@
     <img src="AMADA.jpg" alt="Machine industrielle 3"> <!-- Image 3 -->
     <img src="hurco.jpg" alt="Machine industrielle 4"> <!-- Image 4 -->
   </div>
-  <div class="banner-text">
-    <h1>AMPS - Vente et Rachat de Machines d’Occasion</h1>
-    <p>Donnez une seconde vie à vos équipements industriels</p>
-  </div>
 </div>
 
 <!-- Header et navigation -->
@@ -217,6 +191,28 @@
   <h1>AMPS - Vente et Rachat de Machines d’Occasion</h1>
   <p>Donnez une seconde vie à vos équipements industriels</p>
 </header>
+
+<nav>
+  <a href="#home">Accueil</a>
+  <a href="#machines">Nos Machines</a>
+  <a href="#about">À propos</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+  <h2>Bienvenue chez AMPS</h2>
+  <p>Spécialiste du rachat et de la vente de machines industrielles d’occasion...</p>
+</section>
+
+<!-- Bannière en bas -->
+<footer>
+  <p>&copy; 2025 AMPS - Vente et Rachat de Machines d’Occasion</p>
+  <p><a href="#contact">Contactez-nous</a></p>
+</footer>
+
+</body>
+</html>
+
 
 <nav>
   <a href="#home">Accueil</a>
