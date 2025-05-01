@@ -26,24 +26,27 @@
     }
 
     .slideshow {
-      display: flex;
-      width: 400%; /* 4 images => 400% */
+      position: absolute;
+      width: 100%;
       height: 100%;
-      animation: slide 30s steps(4, end) forwards; /* Diaporama plus lent (30s au lieu de 20s) */
+      display: flex;
+      transition: opacity 1s ease-in-out; /* Transition douce */
     }
 
     .slideshow img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      opacity: 0; /* Images initialement invisibles */
+      animation: fadeInOut 30s infinite; /* Animation du fondu */
     }
 
-    @keyframes slide {
-      0%   { transform: translateX(0%); }
-      25%  { transform: translateX(-100%); }
-      50%  { transform: translateX(-200%); }
-      75%  { transform: translateX(-300%); }
-      100% { transform: translateX(0%); } /* Reste figé sur la première image après le défilement */
+    @keyframes fadeInOut {
+      0%   { opacity: 0; }          /* Image invisible au début */
+      20%  { opacity: 1; }          /* Image apparaît (fade-in) */
+      25%  { opacity: 1; }          /* Image reste visible */
+      50%  { opacity: 0; }          /* Image disparaît (fade-out) */
+      100% { opacity: 0; }          /* Image reste invisible à la fin */
     }
 
     .banner-text {
@@ -227,6 +230,7 @@
   <p>Spécialiste du rachat et de la vente de machines industrielles d’occasion...</p>
 </section>
 
+<!-- Bannière en bas -->
 <footer>
   <p>&copy; 2025 AMPS - Vente et Rachat de Machines d’Occasion</p>
   <p><a href="#contact">Contactez-nous</a></p>
@@ -234,6 +238,7 @@
 
 </body>
 </html>
+
 
   <h2>Bienvenue chez AMPS</h2>
   <p>Spécialiste du rachat et de la vente de machines industrielles d’occasion, AMPS vous accompagne dans toutes les étapes de la gestion de vos équipements. Nous intervenons sur un large éventail de machines, quelle que soit leur typologie ou leur secteur d’activité.<p>
