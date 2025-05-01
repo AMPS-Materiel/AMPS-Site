@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AMPS - Vente et Rachat de Machines d’Occasion</title>
-
+  
+  <!-- CSS du diaporama et du site -->
   <style>
     * {
       margin: 0;
@@ -16,6 +17,7 @@
       font-family: Arial, sans-serif;
     }
 
+    /* STYLE DE LA BANNIÈRE ET DU DIAPORAMA */
     .banner {
       position: relative;
       width: 100%;
@@ -27,7 +29,7 @@
       display: flex;
       width: 400%; /* 4 images => 400% */
       height: 100%;
-      animation: slide 40s steps(4, end) forwards; /* Diaporama plus lent (40s) et figé à la fin */
+      animation: slide 30s steps(4, end) forwards; /* Diaporama plus lent (30s au lieu de 20s) */
     }
 
     .slideshow img {
@@ -41,7 +43,7 @@
       25%  { transform: translateX(-100%); }
       50%  { transform: translateX(-200%); }
       75%  { transform: translateX(-300%); }
-      100% { transform: translateX(0%); }
+      100% { transform: translateX(0%); } /* Reste figé sur la première image après le défilement */
     }
 
     .banner-text {
@@ -66,53 +68,173 @@
       font-size: 18px;
     }
 
-    @media (max-width: 768px) {
-      .banner {
-        height: 250px;
+    /* STYLE DU RESTE DU SITE (header, nav, footer, etc.) */
+    header {
+      background-color: #0056A3;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    header .logo {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+
+    header .logo img {
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    header h1 {
+      font-size: 2em;
+      margin: 10px 0;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 1em;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #333;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 1em;
+    }
+
+    nav a:hover {
+      background-color: #444;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      background-color: white;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0056A3;
+      color: white;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* FORMULAIRE */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form label {
+      font-weight: bold;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    form input[type="submit"] {
+      background-color: #0056A3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #003d73;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
       }
 
-      .banner-text h1 {
-        font-size: 24px;
+      .logo img {
+        height: 60px;
       }
 
-      .banner-text p {
-        font-size: 14px;
+      nav a {
+        font-size: 0.9em;
+        padding: 8px 10px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Code du diaporama -->
-  <div class="banner">
-    <div class="slideshow">
-      <img src="image0.png" alt="Machine industrielle 1"> <!-- Image 1 -->
-      <img src="sdmo.jpg" alt="Machine industrielle 2"> <!-- Image 2 -->
-      <img src="AMADA.jpg" alt="Machine industrielle 3"> <!-- Image 3 -->
-      <img src="hurco.jpg" alt="Machine industrielle 4"> <!-- Image 4 -->
-    </div>
-    <div class="banner-text">
-      <h1>AMPS - Vente et Rachat de Machines d’Occasion</h1>
-      <p>Donnez une seconde vie à vos équipements industriels</p>
-    </div>
+<!-- Code de la bannière avec le diaporama -->
+<div class="banner">
+  <div class="slideshow">
+    <img src="image0.png" alt="Machine industrielle 1"> <!-- Image 1 -->
+    <img src="sdmo.jpg" alt="Machine industrielle 2"> <!-- Image 2 -->
+    <img src="AMADA.jpg" alt="Machine industrielle 3"> <!-- Image 3 -->
+    <img src="hurco.jpg" alt="Machine industrielle 4"> <!-- Image 4 -->
   </div>
+  <div class="banner-text">
+    <h1>AMPS - Vente et Rachat de Machines d’Occasion</h1>
+    <p>Donnez une seconde vie à vos équipements industriels</p>
+  </div>
+</div>
 
-</body>
-</html>
+<!-- Header et navigation -->
+<header>
+  <div class="logo">
+    <img src="image0.png" alt="Logo AMPS">
+  </div>
+  <h1>AMPS - Vente et Rachat de Machines d’Occasion</h1>
+  <p>Donnez une seconde vie à vos équipements industriels</p>
+</header>
 
-
-  <!-- Menu -->
-  <nav>
-    <a href="#home">Accueil</a>
-    <a href="#machines">Nos Machines</a>
-    <a href="#about">À propos</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-</body>
-</html>
+<nav>
+  <a href="#home">Accueil</a>
+  <a href="#machines">Nos Machines</a>
+  <a href="#about">À propos</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <section id="home">
+  <h2>Bienvenue chez AMPS</h2>
+  <p>Spécialiste du rachat et de la vente de machines industrielles d’occasion...</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 AMPS - Vente et Rachat de Machines d’Occasion</p>
+  <p><a href="#contact">Contactez-nous</a></p>
+</footer>
+
+</body>
+</html>
+
   <h2>Bienvenue chez AMPS</h2>
   <p>Spécialiste du rachat et de la vente de machines industrielles d’occasion, AMPS vous accompagne dans toutes les étapes de la gestion de vos équipements. Nous intervenons sur un large éventail de machines, quelle que soit leur typologie ou leur secteur d’activité.<p>
 
