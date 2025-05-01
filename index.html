@@ -729,20 +729,27 @@ Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement
 
 
 
-    <p><section id="contact"><p>
+    <section id="contact">
   <h2>Contactez-nous</h2>
-  <form action="#">
+  <form action="https://formsubmit.co/amps.materiel@gmail.com" method="POST">
+    <!-- Empêche le spam -->
+    <input type="hidden" name="_captcha" value="false">
+    <!-- Redirection après envoi -->
+    <input type="hidden" name="_next" value="https://votre-site.com/merci.html">
+    
     <label for="name">Nom</label><br>
     <input type="text" id="name" name="name" required><br><br>
+    
     <label for="email">Email</label><br>
     <input type="email" id="email" name="email" required><br><br>
+    
     <label for="message">Message</label><br>
     <textarea id="message" name="message" required></textarea><br><br>
+    
     <input type="submit" value="Envoyer">
   </form>
 </section>
 
-<footer>
   
 
 <p>&copy; 2025 AMPS. Tous droits réservés. | <a href="mailto:amps.materiel@gmail.com">amps.materiel@gmail.com</a></p>Linge direct : 06 81 61 00 32<p>
