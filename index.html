@@ -2,8 +2,7 @@
  <html lang="fr">
  <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>AMPS - Vente et Rachat de Machines d’Occasion</title>
+   <title>AMPS - Machines d’Occasion</title>
    <style>
      * {
        margin: 0;
@@ -13,11 +12,8 @@
  
      body {
        font-family: Arial, sans-serif;
-       background-color: #f4f4f4;
-       color: #333;
      }
  
-     /* Diaporama */
      .banner {
        position: relative;
        width: 100%;
@@ -27,23 +23,21 @@
  
      .slideshow {
        display: flex;
-       width: 400%;
+       width: 300%; /* 3 images => 300% */
        height: 100%;
-       animation: slide 24s infinite;
+       animation: slide 12s infinite;
      }
  
      .slideshow img {
        width: 100%;
        height: 100%;
        object-fit: cover;
-       object-position: center;
      }
  
      @keyframes slide {
        0%   { transform: translateX(0%); }
-       25%  { transform: translateX(-100%); }
-       50%  { transform: translateX(-200%); }
-       75%  { transform: translateX(-300%); }
+       33%  { transform: translateX(-100%); }
+       66%  { transform: translateX(-200%); }
        100% { transform: translateX(0%); }
      }
  
@@ -69,21 +63,6 @@
        font-size: 18px;
      }
  
-     /* Logo flottant */
-     .logo {
-       position: absolute;
-       top: 15px;
-       left: 15px;
-       z-index: 10;
-     }
- 
-     .logo img {
-       height: 80px;
-       border-radius: 50%;
-       border: 2px solid #fff;
-     }
- 
-     /* Responsive */
      @media (max-width: 768px) {
        .banner {
          height: 250px;
@@ -96,10 +75,68 @@
        .banner-text p {
          font-size: 14px;
        }
+     }
+   </style>
+ </head>
+ <body>
  
-       .logo img {
-         height: 60px;
-       }
+   <div class="banner">
+     <div class="slideshow">
+       <img src=" image0.png" alt="Machine industrielle 1">
+       <img src=" sdmo.jpg AMADA.jpg" alt="Machine industrielle 2">
+       <img src=" AMADA.jpg " alt="Machine industrielle 3">
+     <img src=" hurco.jpg" alt="Machine industrielle 4">
+ </div>
+     <div class="banner-text">
+       <h1>AMPS - Vente et Rachat de Machines d’Occasion</h1>
+       <p>Donnez une seconde vie à vos équipements industriels</p>
+     </div>
+   </div>
+ 
+ </body>
+ </html>
+ <!DOCTYPE html>
+ <html lang="fr">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AMPS - Vente et Rachat de Machines d’Occasion</title>
+   <style>
+     body {
+       font-family: Arial, sans-serif;
+       margin: 0;
+       background-color: #f4f4f4;
+       color: #333;
+     }
+ 
+     header {
+       background-color: #0056A3;
+       color: white;
+       padding: 20px 0;
+       text-align: center;
+       position: relative;
+     }
+ 
+     header .logo {
+       position: fixed;
+       top: 10px;
+       left: 10px;
+       z-index: 1000;
+     }
+ 
+     header .logo img {
+       height: 80px;
+       border-radius: 50%;
+     }
+ 
+     header h1 {
+       font-size: 2em;
+       margin: 10px 0;
+     }
+ 
+     header p {
+       margin: 0;
+       font-size: 1em;
      }
  
      nav {
@@ -175,6 +212,7 @@
        text-decoration: none;
      }
  
+     /* FORMULAIRE */
      form {
        display: flex;
        flex-direction: column;
@@ -206,64 +244,39 @@
      form input[type="submit"]:hover {
        background-color: #003d73;
      }
+ 
+     @media (max-width: 600px) {
+       header h1 {
+         font-size: 1.5em;
+       }
+ 
+       .logo img {
+         height: 60px;
+       }
+ 
+       nav a {
+         font-size: 0.9em;
+         padding: 8px 10px;
+       }
+     }
    </style>
  </head>
  <body>
  
-   <!-- Nouveau bandeau avec logo + slideshow -->
-   <div class="banner">
-     <div class="logo">
-       <img src="image0.png" alt="Logo AMPS">
-     </div>
-     <div class="slideshow">
-       <img src="image0.png" alt="Machine industrielle 1">
-       <img src="sdmo.jpg" alt="Machine industrielle 2">
-       <img src="AMADA.jpg" alt="Machine industrielle 3">
-       <img src="hurco.jpg" alt="Machine industrielle 4">
-     </div>
- <div class="banner">
-   <div class="slideshow">
-     <img src="image0.png" alt="Machine industrielle 1">
-     <img src="sdmo.jpg" alt="Machine industrielle 2">
-     <img src="AMADA.jpg" alt="Machine industrielle 3">
-     <img src="hurco.jpg" alt="Machine industrielle 4">
+ <header>
+   <div class="logo">
+     <img src="image0.png" alt="Logo AMPS">
    </div>
-   <div class="banner-text">
-     <h1>AMPS - Vente et Rachat de Machines d’Occasion</h1>
-     <p>Donnez une seconde vie à vos équipements industriels</p>
-   </div>
- </div>
+   <h1>AMPS - Vente et Rachat de Machines d’Occasion</h1>
+   <p>Donnez une seconde vie à vos équipements industriels</p>
+ </header>
  
-     <div class="banner-text">
-       <h1>AMPS - Vente et Rachat de Machines d’Occasion</h1>
-       <p>Donnez une seconde vie à vos équipements industriels</p>
-     </div>
-   </div>
- 
-   <!-- Menu -->
-   <nav>
-     <a href="#home">Accueil</a>
-     <a href="#machines">Nos Machines</a>
-     <a href="#about">À propos</a>
-     <a href="#contact">Contact</a>
-   </nav>
- 
-   <!-- Contenu principal -->
-   <section id="home">
-     <h2>Bienvenue chez AMPS</h2>
-     <p>Spécialiste du rachat et de la vente de machines industrielles d’occasion, AMPS vous accompagne dans toutes les étapes de la gestion de vos équipements. Nous intervenons sur un large éventail de machines, quelle que soit leur typologie ou leur secteur d’activité.</p>
- 
-     <p>Notre engagement : vous proposer des solutions sur mesure, adaptées à vos besoins spécifiques et à vos délais. Grâce à une estimation rapide par photos en 24 à 48 heures et une planification d’enlèvement réactive, nous mettons tout en œuvre pour simplifier et accélérer vos démarches.</p>
- 
-     <p>Chez AMPS, nous reprenons vos équipements sans exigence de garantie. Nous prenons en charge l’ensemble du processus : démontage, manutention, chargement, transport… Aucune contrainte pour vous. Le paiement intégral est effectué avant l’enlèvement, pour une transparence et une sécurité totales.</p>
- 
-     <p>Notre priorité est votre sérénité et de travailler sur le long terme ensemble. Faites confiance à un partenaire engagé, qui respecte ses engagements et valorise au mieux vos équipements.</p>
- 
-     <p>Contactez-nous dès aujourd’hui.</p>
-   </section>
- 
- </body>
- </html>
+ <nav>
+   <a href="#home">Accueil</a>
+   <a href="#machines">Nos Machines</a>
+   <a href="#about">À propos</a>
+   <a href="#contact">Contact</a>
+ </nav>
  
  <section id="home">
    <h2>Bienvenue chez AMPS</h2>
