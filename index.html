@@ -5,36 +5,6 @@
   <title>AMPS - Diaporama</title>
   <meta name="google-site-verification" content="google32ae22b12fca4cee" />
   <style>
-from datetime import date
-
-# Génération du fichier sitemap.xml avec les pages principales du site
-sitemap_content = f"""<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://amps-materiel.github.io/AMPS-Site/</loc>
-    <lastmod>{date.today()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://amps-materiel.github.io/AMPS-Site/#about</loc>
-    <lastmod>{date.today()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://amps-materiel.github.io/AMPS-Site/#contact</loc>
-    <lastmod>{date.today()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>
-"""
-
-# Sauvegarde du fichier
-sitemap_path = "/mnt/data/sitemap.xml"
-with open(sitemap_path, "w") as file:
-    file.write(sitemap_content)
 
     * {
       box-sizing: border-box;
