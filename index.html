@@ -1,907 +1,236 @@
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <google-site-verification: google32ae22b12fca4cee.html>
-  <meta name="google-site-verification" content="s4qxWzklvSeMPuz3khdM8inomvwwSjgB6yWW9_DOR3c" />
-  <meta name="google-site-verification" content="google32ae22b12fca4cee" />
-  <style>
-  <title>AMPS</title>
-  ...
-</head><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>AMPS - Diaporama</title>
-  <meta name="google-site-verification" content="google32ae22b12fca4cee" />
-  <style>
-    <url>
-<loc>https://amps-materiel.github.io/AMPS-Site/</loc>
-<lastmod>2025-06-12T07:06:02+00:00</lastmod>
-</url>
-    <meta name="google-site-verification" content="s4qxWzklvSeMPuz3khdM8inomvwwSjgB6yWW9_DOR3c" />
-</urlset>
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Machines industrielles - Vente & Achat</title>
+<style>
+  /* Reset basique */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  header {
+    background: #003366;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  nav {
+    background: #004080;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #ffcc00;
+  }
+  main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  section {
+    margin-bottom: 40px;
+  }
+  h1, h2 {
+    color: #003366;
+    margin-bottom: 15px;
+  }
+  p {
+    margin-bottom: 15px;
+  }
+  /* Diaporama images */
+  .slideshow {
+    position: relative;
+    max-width: 100%;
+    height: 350px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  .slideshow img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  .slideshow img.active {
+    opacity: 1;
+    position: relative;
+  }
+  /* Formulaire */
+  form {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    max-width: 500px;
+    margin: 0 auto 60px auto;
+  }
+  form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #003366;
+  }
+  form input, form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+  }
+  form button {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  form button:hover {
+    background: #0059b3;
+  }
+  footer {
+    text-align: center;
+    padding: 15px 10px;
+    background: #003366;
+    color: white;
+    font-size: 0.9rem;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    header {
+      font-size: 1.4rem;
     }
-
-    body, html {
-      height: 100%;
-      font-family: Arial, sans-serif;
+    nav {
+      flex-direction: column;
+      gap: 10px;
     }
-
-    .banner {
-      position: relative;
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
+    .slideshow {
+      height: 220px;
     }
-
-    .banner img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      opacity: 0;
-      animation: fadeSlideshow 16s infinite;
+    .slideshow img {
+      height: 220px;
     }
-
-    .banner img:nth-child(1) { animation-delay: 0s; }
-    .banner img:nth-child(2) { animation-delay: 6s; }
-    .banner img:nth-child(3) { animation-delay: 12s; }
-    .banner img:nth-child(4) { animation-delay: 18s; }
-
-    @keyframes fadeSlideshow {
-      0% { opacity: 0; }
-      5% { opacity: 1; }
-      25% { opacity: 1; }
-      30% { opacity: 0; }
-      100% { opacity: 0; }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <div class="banner">
-    <img src="image0.png" alt="Image 1">
-    <img src="sdmo.jpg" alt="Image 2">
-    <img src="AMADA.jpg" alt="Image 3">
-    <img src="hurco.jpg" alt="Image 4">
-  </div>
+<header>
+  Vente et Achat de Machines Industrielles
+</header>
+
+<nav>
+  <a href="#presentation">Présentation</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="slideshow" aria-label="Diaporama images machines industrielles">
+  <img src="image0.png" alt="Machine industrielle modèle 0" class="active" />
+  <img src="sdmo.jpg" alt="Groupe électrogène SDMO" />
+  <img src="AMADA.jpg" alt="Machine AMADA" />
+  <img src="hurco.jpg" alt="Machine Hurco" />
+</div>
+
+<main>
+  <section id="presentation">
+    <h1>Présentation</h1>
+    <p>
+      Nous sommes spécialisés dans la vente et l'achat de machines industrielles, groupes électrogènes, compresseurs, transformateurs, moteurs industriels, éoliennes et équipements lourds industriels neufs ou d'occasion.  
+    </p>
+    <p>
+      Notre expérience nous permet de vous proposer des équipements fiables, adaptés à vos besoins, avec un service professionnel et personnalisé.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>Nos Services</h2>
+    <p>
+      - Vente de machines neuves et d'occasion<br />
+      - Reprise et rachat de matériel industriel<br />
+      - Conseils techniques et accompagnement personnalisé<br />
+      - Livraison et installation sur site
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contactez-nous</h2>
+    <form method="POST" action="mailto:tonemail@domaine.com" enctype="text/plain" onsubmit="return validateForm()">
+      <label for="nom">Nom complet *</label>
+      <input type="text" id="nom" name="nom" required placeholder="Votre nom complet" />
+      
+      <label for="email">Adresse e-mail *</label>
+      <input type="email" id="email" name="email" required placeholder="Votre e-mail" />
+      
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Votre message"></textarea>
+      
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Machines Industrielles - Tous droits réservés
+</footer>
+
+<script>
+  // Diaporama automatique
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slideshow img');
+
+  function showSlides() {
+    slides.forEach((slide) => slide.classList.remove('active'));
+    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
+    slides[slideIndex - 1].classList.add('active');
+    setTimeout(showSlides, 4000);
+  }
+  showSlides();
+
+  // Validation simple formulaire
+  function validateForm() {
+    const nom = document.getElementById('nom').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if (!nom || !email || !message) {
+      alert('Merci de remplir tous les champs obligatoires.');
+      return false;
+    }
+    return true;
+  }
+</script>
 
 </body>
-</html>   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>AMPS - Vente et Rachat de Machines d’Occasion</title>
-   <style>
-     body {
-       font-family: Arial, sans-serif;
-       margin: 0;
-       background-color: #f4f4f4;
-       color: #333;
-     }
- 
-     header {
-       background-color: #0056A3;
-       color: white;
-       padding: 20px 0;
-       text-align: center;
-       position: relative;
-     }
- 
-     header .logo {
-       position: fixed;
-       top: 10px;
-       left: 10px;
-       z-index: 1000;
-     }
- 
-     header .logo img {
-       height: 80px;
-       border-radius: 50%;
-     }
- 
-     header h1 {
-       font-size: 2em;
-       margin: 10px 0;
-     }
- 
-     header p {
-       margin: 0;
-       font-size: 1em;
-     }
- 
-     nav {
-       display: flex;
-       flex-wrap: wrap;
-       justify-content: center;
-       background-color: #333;
-       padding: 10px;
-     }
- 
-     nav a {
-       color: white;
-       text-decoration: none;
-       padding: 10px 15px;
-       margin: 5px;
-       font-size: 1em;
-     }
- 
-     nav a:hover {
-       background-color: #444;
-     }
- 
-     section {
-       max-width: 1200px;
-       margin: auto;
-       padding: 20px;
-       background-color: white;
-       margin-top: 20px;
-       border-radius: 8px;
-     }
- 
-     .machine-list {
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-       gap: 20px;
-     }
- 
-     .machine-item {
-       border: 1px solid #ddd;
-       padding: 20px;
-       border-radius: 8px;
-       background-color: #f9f9f9;
-       transition: transform 0.2s;
-     }
- 
-     .machine-item:hover {
-       transform: translateY(-5px);
-     }
- 
-     .machine-item img {
-       width: 100%;
-       height: 300px;
-       object-fit: cover;
-       border-radius: 4px;
-     }
- 
-     .machine-item h3 {
-       margin-top: 10px;
-       font-size: 1.2em;
-       color: #0056A3;
-     }
- 
-     footer {
-       text-align: center;
-       padding: 20px;
-       background-color: #0056A3;
-       color: white;
-       margin-top: 40px;
-     }
- 
-     footer a {
-       color: white;
-       text-decoration: none;
-     }
- 
-     /* FORMULAIRE */
-     form {
-       display: flex;
-       flex-direction: column;
-       gap: 15px;
-     }
- 
-     form label {
-       font-weight: bold;
-     }
- 
-     form input,
-     form textarea {
-       width: 100%;
-       padding: 12px;
-       border: 1px solid #ccc;
-       border-radius: 5px;
-       font-size: 1em;
-     }
- 
-     form input[type="submit"] {
-       background-color: #0056A3;
-       color: white;
-       border: none;
-       cursor: pointer;
-       font-weight: bold;
-       transition: background-color 0.3s;
-     }
- 
-     form input[type="submit"]:hover {
-       background-color: #003d73;
-     }
- 
-     @media (max-width: 600px) {
-       header h1 {
-         font-size: 1.5em;
-       }
- 
-       .logo img {
-         height: 60px;
-       }
- 
-       nav a {
-         font-size: 0.9em;
-         padding: 8px 10px;
-       }
-     }
-   </style>
- </head>
- <body>
- 
- <header>
-   <div class="logo">
-     <img src="image0.png" alt="Logo AMPS">
-   </div>
-   <h1>AMPS - Vente et Rachat de Machines d’Occasion</h1>
-   <p>Donnez une seconde vie à vos équipements industriels</p>
- </header>
- 
- <nav>
-   <a href="#home">Accueil</a>
-   <a href="#machines">Nos Machines</a>
-   <a href="#about">À propos</a>
-   <a href="#contact">Contact</a>
- </nav>
- 
- <<section id="home" style="max-width: 1000px; margin: auto; padding: 40px 20px; font-family: Arial, sans-serif; line-height: 1.8; font-size: 18px; color: #333;">
-  <h2 style="font-size: 32px; color: #0056A3; margin-bottom: 20px; text-align: center;">Bienvenue chez AMPS</h2>
+</html>
 
-  <p>
-    <strong>Spécialiste du rachat et de la vente de machines industrielles d’occasion</strong>, AMPS vous accompagne dans toutes les étapes de la gestion de vos équipements. 
-    Nous intervenons sur un large éventail de machines, quelle que soit leur typologie ou leur secteur d’activité.
-  </p>
-
-  <p>
-    <strong>Notre engagement :</strong> vous proposer des solutions sur mesure, adaptées à vos besoins spécifiques et à vos délais. 
-    Grâce à une estimation rapide par photos en 24 à 48 heures et une planification d’enlèvement réactive, 
-    nous mettons tout en œuvre pour simplifier et accélérer vos démarches.
-  </p>
-
-  <p>
-    <strong>Chez AMPS</strong>, nous reprenons vos équipements sans exigence de garantie. 
-    Nous prenons en charge l’ensemble du processus : démontage, manutention, chargement, transport… 
-    <strong>Aucune contrainte pour vous.</strong> Le paiement intégral est effectué avant l’enlèvement, pour une transparence et une sécurité totales.
-  </p>
-
-  <p>
-    <strong>Notre priorité :</strong> votre sérénité et de travailler sur le long terme ensemble. 
-    Faites confiance à un partenaire engagé, qui respecte ses engagements et valorise au mieux vos équipements.
-  </p>
-
-  <p style="text-align: center; font-weight: bold; font-size: 20px; margin-top: 30px;">
-    Contactez-nous dès aujourd’hui pour une évaluation rapide et sans engagement.
-  </p>
-</section>
-
- </section>
- <section id="machines">
-   <h2>Nos Machines en Vente</h2>
-   <style>
-   .machine-list {
-     display: flex;
-     flex-wrap: wrap;
-     gap: 20px;
-     justify-content: center;
-   }
- 
-   .machine-item {
-     flex: 1 1 calc(33.333% - 40px);
-     box-sizing: border-box;
-     border: 1px solid #ccc;
-     border-radius: 8px;
-     padding: 10px;
-     background-color: #f9f9f9;
-     max-width: 400px;
-   }
- 
-   .machine-item img {
-     width: 100%;
-     height: 300px;
-     object-fit: cover;
-     border-radius: 4px;
-   }
- 
-   @media screen and (max-width: 1000px) {
-     .machine-item {
-       flex: 1 1 calc(50% - 40px);
-     }
-   }
- 
-   @media screen and (max-width: 600px) {
-     .machine-item {
-       flex: 1 1 100%;
-     }
-   }
- <style>
-   .machine-grid {
-     display: flex;
-     flex-wrap: wrap;
-     gap: 20px;
-     justify-content: center;
-   }
- 
-   .machine-card {
-     width: 30%;
-     background: #f9f9f9;
-     border-radius: 10px;
-     overflow: hidden;
-     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-     padding: 15px;
-     box-sizing: border-box;
-     position: relative;
-   }
- 
-   .image-container {
-     position: relative;
-     width: 100%;
-     height: 250px;
-     overflow: hidden;
-     border-radius: 6px;
-   }
- 
-   .image-container img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     display: block;
-   }
- 
-   .sold-overlay {
-     position: absolute;
-     top: 20px;
-     left: -40px;
-     transform: rotate(-45deg);
-     background: red;
-     color: white;
-     font-weight: bold;
-     padding: 5px 60px;
-     font-size: 18px;
-     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-     z-index: 2;
-     text-align: center;
-   }
- <style>
-   .machine-grid {
-     display: flex;
-     flex-wrap: wrap;
-     gap: 20px;
-     justify-content: center;
-   }
- 
-   .machine-card {
-     width: 30%;
-     background: #f9f9f9;
-     border-radius: 10px;
-     overflow: hidden;
-     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-     padding: 15px;
-     box-sizing: border-box;
-     position: relative;
-   }
- 
-   .image-container {
-     position: relative;
-     width: 100%;
-     height: 250px;
-     overflow: hidden;
-     border-radius: 6px;
-   }
- 
-   .image-container img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     display: block;
-   }
- 
-   .sold-overlay {
-     position: absolute;
-     top: 20px;
-     left: -40px;
-     transform: rotate(-45deg);
-     background: red;
-     color: white;
-     font-weight: bold;
-     padding: 5px 60px;
-     font-size: 18px;
-     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-     z-index: 2;
-     text-align: center;
-   }
- <style>
-   .machine-grid {
-     display: flex;
-     flex-wrap: wrap;
-     gap: 24px;
-     justify-content: center;
-     padding: 20px;
-   }
- 
-   .machine-card {
-     width: 320px;
-     background: #ffffff;
-     border-radius: 16px;
-     overflow: hidden;
-     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-     padding: 20px;
-     box-sizing: border-box;
-     position: relative;
-     transition: transform 0.2s ease;
-   }
- 
-   .machine-card:hover {
-     transform: translateY(-5px);
-   }
- 
-   .image-container {
-     position: relative;
-     width: 100%;
-     height: 200px;
-     overflow: hidden;
-     border-radius: 12px;
-     margin-bottom: 15px;
-   }
- 
-   .image-container img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     display: block;
-   }
- 
-   .sold-overlay {
-     position: absolute;
-     top: 16px;
-     left: -35px;
-     transform: rotate(-45deg);
-     background: red;
-     color: white;
-     font-weight: bold;
-     padding: 5px 50px;
-     font-size: 16px;
-     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-     z-index: 2;
-     text-align: center;
-   }
- <style>
-   .machine-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-     gap: 1rem;
-   }
- 
-   .machine-card {
-     position: relative;
-     background: white;
-     border: 1px solid #ddd;
-     border-radius: 8px;
-     padding: 1rem;
-     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-     overflow: hidden;
-   }
- 
-   .machine-card img {
-     width: 100%;
-     height: auto;
-     border-radius: 4px;
-   }
- 
-   .machine-card.vendu p {
-     display: none;
-   }
- 
-   .sold-ribbon {
-     position: absolute;
-     top: 15px;
-     left: -45px;
-     transform: rotate(-45deg);
-     background-color: red;
-     color: white;
-     padding: 5px 60px;
-     font-weight: bold;
-     font-size: 14px;
-     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-     z-index: 10;
-   }
- </style>
- 
- <section id="machines">
-   <h3>Nos Machines en Vente</h3>
-   <div class="machine-grid">
-     <!-- Machine 1 -->
-     <div class="machine-card vendu">
-       <div class="sold-ribbon">VENDU</div>
-       <img src="AMADA.jpg" alt="Presse Plieuse AMADA HFE 100-3">
-       <h3>Presse Plieuse AMADA HFE 100-3</h3>
-       <p>Longueur : 3000mm</p>
-       <p>Force : 100 Tonnes</p>
-       <p>Année : 2001</p>
-       <p>En très bon état</p>
-       <p><strong>Prix : 21 000€</strong></p>
-     </div>
-     <!-- Machine 2 -->
-     <div class="machine-card vendu">
-       <div class="sold-ribbon">VENDU</div>
-       <img src="hurco.jpg" alt="Centre d’usinage Hurco VM10">
-       <h3>Centre d’usinage Hurco VM10</h3>
-       <p>Année : 2011</p>
-       <p>Vitesse maximale : 8000 tr/min</p>
-       <p>Course : X 760 mm, Y 510 mm, Z 510 mm</p>
-       <p><strong>Prix : 15 000€</strong></p>
-     </div>
-     <!-- Machine 3 -->
-     <div class="machine-card vendu">
-       <div class="sold-ribbon">VENDU</div>
-       <img src="haas.jpg" alt="Centre d’usinage HAAS VF-9">
-       <h3>Centre d’usinage HAAS VF-9</h3>
-       <p>Année : 2006</p>
-       <p>Vitesse maximale : 8100 tr/min</p>
-       <p>Course : X 1778 mm, Y 660 mm, Z 762 mm</p>
-       <p><strong>Prix : 25 000€</strong></p>
-     </div>
-     <!-- Machine 4 -->
-     <div class="machine-card vendu">
-       <div class="sold-ribbon">VENDU</div>
-       <img src="charmille330.jpg" alt="Charmilles Robofil 330">
-       <h3>Charmilles Robofil 330</h3>
-       <p>Année : 2000</p>
-       <p>Dimensions de l'électrode : X 330 mm, Y 220 mm, Z 270 mm</p>
-       <p><strong>Prix : 10 000€</strong></p>
-     </div>
-     <!-- Machine 5 -->
-     <div class="machine-card vendu">
-       <div class="sold-ribbon">VENDU</div>
-       <img src="CHARMILLE240.jpg" alt="Charmilles Robofil 240">
-       <h3>Charmilles Robofil 240</h3>
-       <p>Année : 2001</p>
-       <p>Dimensions de l'électrode : X 240 mm, Y 150 mm, Z 180 mm</p>
-       <p><strong>Prix : 10 000€</strong></p>
-     </div>
-     <!-- Machine 6 -->
-     <div class="machine-card">
-       <img src="integrx400y.jpg" alt="Tour CNC MAZAK INTEGREX 400Y">
-       <h3>Tour CNC MAZAK INTEGREX 400Y</h3>
-       <p>Année : 2010</p>
-       <p>Course : X 300 mm, Y 150 mm, Z 100 mm</p>
-       <p><strong>FAIRE OFFRE</strong></p>
-     </div>
-     <!-- Machine 7 -->
-     <div class="machine-card">
-       <img src="ex910.jpg" alt="Tour CNC Takisawa EX-910">
-       <h3>Tour CNC Takisawa EX-910</h3>
-       <p><strong>FAIRE OFFRE</strong></p>
-     </div>
-     <!-- Machine 8 -->
-     <div class="machine-card">
-       <img src="citizen.jpg" alt="Tour CNC Citizen M32V">
-       <h3>Tour CNC Citizen M32V</h3>
-       <p><strong>FAIRE OFFRE</strong></p>
-     </div>
-     <!-- Machine 9 -->
-     <div class="machine-card">
-       <img src="mtv.jpg" alt="Centre usinage Mazak MTV 655/80N">
-       <h3>Centre d'usinage Mazak MTV 655/80N</h3>
-       <p><strong>FAIRE OFFRE</strong></p>
-     </div>
-     <!-- Machine 10 -->
-     <div class="machine-card vendu">
-       <div class="sold-ribbon">VENDU</div>
-       <img src="fh.jpg" alt="Centre usinage Mazak FH 880">
-       <h3>Centre d'usinage Mazak FH 880</h3>
-     </div>
-     <!-- Machine 11 -->
-    <div class="machine-card">
-       <img src="mastu.jpg" alt="Centre Matsuura Maxia Cublex 25">
-       <h3>Centre de fraisage et tournage Matsuura Maxia Cublex 25</h3>
-       <p>Année 2008</p>
-       <p>Course : X 600 mm, Y 600 mm, Z 450 mm</p>
-       <p><strong>FAIRE OFFRE</strong></p>
-     </div>
-     <!-- Machine 12 -->
-     <div class="machine-card vendu">
-       <div class="sold-ribbon">VENDU</div>
-       <img src="bois.jpg" alt="Machine Bois">
-       <h3>Machine Bois</h3>
-       <p>Année : 2005</p>
-       <p>Dimensions : L 3000 mm, H 1500 mm</p>
-       <p><strong>Prix : 5 000€</strong></p>
-     </div>
-     <!-- Machine 13 -->
-     <div class="machine-card vendu">
-       <div class="sold-ribbon">VENDU</div>
-       <img src="camion.jpg" alt="Camion industriel">
-       <h3>Tribenne</h3>
-       <p>Année : 2010</p>
-       <p>Capacité : 20 m³</p>
-       <p><strong>Prix : 12 000€</strong></p>
-     </div>
-     <!-- Machine 14 -->
-     <div class="machine-card vendu">
-       <div class="sold-ribbon">VENDU</div>
-       <img src="takamaz.jpg" alt="Tour Takamaz">
-       <h3>Tour CNC Takamaz</h3>
-       <p>Année : 2008</p>
-       <p>Vitesse : 6000 tr/min</p>
-       <p>Course : X 400 mm, Z 250 mm</p>
-       <p><strong>Prix : 8 000€</strong></p>
-     </div>
-     <!-- Machine 15 -->
-     <div class="machine-card vendu">
-       <div class="sold-ribbon">VENDU</div>
-       <img src="sdmo.jpg" alt="Groupe SDMO">
-       <h3>Groupe électrogène SDMO</h3>
-       <p>Puissance : 200 kVA</p>
-       <p>Année : 2012</p>
-       <p><strong>Prix : 18 000€</strong></p>
-     </div>
-     <!-- Machine 16 -->
-     <div class="machine-card">
-       <img src="emebareur.jpg" alt="Embarreur LNS QUICK LOAD SERVO">
-       <h3>Embarreur LNS QUICK LOAD SERVO</h3>
-       <p><strong>Prix : 1 500€</strong></p>
-     </div>
-     <!-- Machine 17 -->
-     <div class="machine-card">
-       <img src="lot.png" alt="Lot ">
-       <h3>Lot de Rectifieuses</h3>
-       <p>Rectifieuse SUEPEMEC PLTH-400 1000€<p>
-       <p>Touret MAPE MM150 500 €<p>
-       <p>Rodeuse Sunnen PLTH-400 avec rodoire 1 500 €<p>
-       <p>Rectifieuse cylindrique Ribon RUR-H 800 1 750 €<p>
-       <p>Rectifieuse cylindrique Ribon RUR-H 1500 2 000 €<p>
-       <p>Prix du lots 6750€<p>
- 
-     </div>
-     <!-- Machine 18 -->
-     <div class="machine-card">
-       <img src="fh5800.jpg" alt="Centre d'usinage Mazak FH 5800">
-       <h3>Centre d'usinage Mazak FH 5800</h3>
-       (photo fh5800.jpg)
-      <p>Centre d'usinage Mazak FH 5800<p>
-      <p>CNC MATAROL 640 M<p>
-      <p>Année 2000<p>
-      <p> Palettisée<p>
-      <p>Course axe X : 710 mm<p>
-      <p>Course axe Y :610 mm<p>
-       <p>Course axe Z : 760 mm<p>
-       <p> Cône de broche : CAT n°40<p>
-       <p>Vitesse de broche principale : 25000 tr/min<p>
-       <p>Longueur : 500 mm<p>
-       <p>Largeur : 500 mm<p>
-       <p>Indexation table : 360000 positions<p>
-       <p>Poids maxi sur palette : 500 kgs<p>
-       <p>Capacité du magasin outils : 40<p>
-       <p>Arrosage centre broche 15 BARS<p>
-       <p>Convoyeur à copeaux<p>
-       <p>Outillage<p>
-       <p>Visible en production<p>
-      <p>En très bon état, avec toute la documentation<p>
-       <p><strong>Faire offre</strong></p>
-     </div>
-     <!-- Machine 19 -->
-     <div class="machine-card vendu">
-       <div class="sold-ribbon">VENDU</div>
-       <img src="mecalac.jpg" alt="Pelle Mecalac 12 MXT">
-       <h3>Mécalac 12 MXT</h3>
-     </div>
-     <!-- Machine 20 -->
-     <div class="machine-card vendu">
-       <div class="sold-ribbon">VENDU</div>
-       <img src="2000kva.jpg" alt="Transformateur 2000kVA">
-       <h3>MTU 2000 kVA</h3>
-       <p>Puissance : 2000 kVA</p>
-       <p>Année : 2015</p>
-       <p><strong>Prix : 40 000€</strong></p>
-     </div>
-   </div>
- </section>
- 
-     </div>
- 
-     </div>
-   </div>
- </section>
- 
- 
- 
-   </div>
- </section>
- 
- 
- <style>
-   #machines {
-     padding: 40px;
-     background-color: #f0f2f5;
-   }
- 
-   #machines h2 {
-     text-align: center;
-     font-size: 32px;
-     margin-bottom: 30px;
-   }
- 
-   .machine-grid {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: space-between;
-     gap: 20px;
-   }
- 
-   .machine-card {
-     flex: 1 1 calc(20% - 20px);
-     background: #fff;
-     border-radius: 12px;
-     overflow: hidden;
-     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-     padding: 15px;
-     box-sizing: border-box;
-     transition: transform 0.3s ease;
-   }
- 
-   .machine-card:hover {
-     transform: translateY(-5px);
-   }
- 
-   .machine-card img {
-     width: 100%;
-     height: 180px;
-     object-fit: cover;
-     border-radius: 8px;
-     margin-bottom: 10px;
-   }
- 
-   .machine-card h3 {
-     font-size: 18px;
-     margin-bottom: 10px;
-     color: #333;
-   }
- 
-   .machine-card p {
-     font-size: 14px;
-     color: #555;
-     margin: 5px 0;
-   }
- 
-   .machine-card .sold {
-     color: red;
-     font-weight: bold;
-     margin-top: 10px;
-     font-size: 16px;
-     text-align: center;
-   }
- 
-   @media (max-width: 1024px) {
-     .machine-card {
-       flex: 1 1 calc(50% - 20px);
-     }
-   }
- 
-   @media (max-width: 600px) {
-     .machine-card {
-       flex: 1 1 100%;
-     }
-   }
- </style>
-   </div>
- </section>
-   </div>
- </section>
- <section id="about">
-   <section id="services" style="max-width: 1000px; margin: auto; padding: 40px 20px; font-family: Arial, sans-serif; line-height: 1.8; font-size: 18px; color: #333;">
-  <h2 style="font-size: 28px; color: #0056A3; margin-bottom: 20px; text-align: center;">
-    Nous vous proposons le rachat de tout type de matériel industriel d’occasion, dans l’état où il se trouve.
-  </h2>
-
-  <ul style="columns: 2; -webkit-columns: 2; -moz-columns: 2; list-style: disc; padding-left: 40px; margin-bottom: 30px;">
-    <li>Groupes électrogènes</li>
-    <li>Transformateurs</li>
-    <li>Groupes froid</li>
-    <li>Turbines</li>
-    <li>Motopompes</li>
-    <li>Machines-outils</li>
-    <li>Machines à bois, alu, PVC</li>
-    <li>Matériel de travaux publics (TP)</li>
-    <li>Levage, chariots élévateurs, nacelles</li>
-    <li>Véhicules utilitaires et de société</li>
-  </ul>
-
-  <p>
-    <strong>Je rachète ces équipements sans garantie de votre part.</strong> Pour faciliter la transaction, je prends en charge le démontage, 
-    la manutention, le chargement et le transport.
-  </p>
-
-  <p><strong>Nous nous occupons de tout.</strong></p>
-
-  <p>
-    Pour toute évaluation, merci de m’envoyer quelques photos et informations par email. 
-    <strong>Je me déplace dans toute la France</strong> pour évaluer vos besoins.
-  </p>
-
-  <p style="margin-top: 30px;">
-    <strong>N’hésitez pas à me contacter pour toute question :</strong>
-  </p>
-
-  <p><strong>AMPS</strong><br>
-  Anthony ZOTOFF<br>
-  Ligne directe : <a href="tel:0681610032" style="color: #0056A3;">06 81 61 00 32</a><br>
-  Tel : <a href="tel:0954486221" style="color: #0056A3;">09 54 48 62 21</a><br>
-  Email : <a href="mailto:amps.materiel@gmail.com" style="color: #0056A3;">amps.materiel@gmail.com</a></p>
-</section>
-
- <div style="text-align: center; margin-top: 40px;">
-   <h3>Suivez-nous</h3>
-   <div style="display: inline-flex; gap: 15px; align-items: center; justify-content: center;">
-     <a href="https://www.linkedin.com/in/anthony-zotoff" target="_blank">
-       <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="35">
-     </a>
-     <a href="https://www.instagram.com/ampsfrance" target="_blank">
-       <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="35">
-     </a>
-     <a href="https://www.facebook.com/AmpsVentesExport?locale=fr_FR" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" 
-        alt="Facebook Amps Ventes Export" 
-        style="width: 32px; height: 32px; vertical-align: middle;">
-   <span style="margin-left: 8px; font-family: Arial, sans-serif; font-size: 16px; color: #1877f2;">
-   </span>
- </a>
-     <a href="https://x.com/anthonyzot22552" target="_blank">
-       <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter (X)" width="35">
-     </a>
-     <a href="https://www.tiktok.com/@ampsfrance" target="_blank">
-       <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" width="35">
-     </a>
-     <a href="https://www.youtube.com/channel/UC18tCWVdzINFEWzQ2SGQT2w" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" width="35">
-    </a>
-   </div>
- </div>
- 
-     </a></h3>
- 
- 
- 
- 
- 
-     <section id="contact">
-   <h2>Contactez-nous</h2>
-   <form action="https://formsubmit.co/amps.materiel@gmail.com" method="POST">
-     <!-- Empêche le spam -->
-     <input type="hidden" name="_captcha" value="false">
-     <!-- Redirection après envoi -->
-     <input type="hidden" name="_next" value="https://votre-site.com/merci.html">
- 
-     <label for="name">Nom</label><br>
-     <input type="text" id="name" name="name" required><br><br>
- 
-     <label for="email">Email</label><br>
-     <input type="email" id="email" name="email" required><br><br>
- 
-     <label for="message">Message</label><br>
-     <textarea id="message" name="message" required></textarea><br><br>
- 
-     <input type="submit" value="Envoyer">
-   </form>
- </section>
- 
- 
- 
-<footer>
-  <div class="zebra-stripes"></div>
-  <div class="footer-content">
-    © 2019 AMPS - Vente & Rachat de Machines Industrielles d’Occasion Ligne direct : 06 81 61 00 32 amps.materiel@gmail.com
-  </div>
-</footer>
 
  
  </body>
