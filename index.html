@@ -1,141 +1,175 @@
+<?php
+// Traitement du formulaire
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nom = strip_tags(trim($_POST["nom"] ?? ""));
+    $email = filter_var(trim($_POST["email"] ?? ""), FILTER_VALIDATE_EMAIL);
+    $message = strip_tags(trim($_POST["message"] ?? ""));
+
+    if ($nom && $email && $message) {
+        $to = "tonemail@exemple.com"; // CHANGE ici par ton adresse mail
+        $subject = "Nouveau message depuis le site";
+        $body = "Nom: $nom\nEmail: $email\nMessage:\n$message";
+        $headers = "From: $email\r\nReply-To: $email";
+
+        if (mail($to, $subject, $body, $headers)) {
+            $success = "Merci pour votre message, nous vous répondrons rapidement.";
+        } else {
+            $error = "Une erreur est survenue lors de l'envoi, veuillez réessayer.";
+        }
+    } else {
+        $error = "Merci de remplir tous les champs correctement.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Machines industrielles - Vente & Achat</title>
+<title>Machines Industrielles - Accueil</title>
 <style>
-  /* Reset basique */
+  /* Reset simple */
   * {
-    margin: 0; padding: 0; box-sizing: border-box;
+    box-sizing: border-box;
   }
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
   }
   header {
-    background: #003366;
-    color: white;
-    padding: 15px 20px;
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-  nav {
     background: #004080;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px 0;
-  }
-  nav a {
     color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.3s;
-  }
-  nav a:hover {
-    color: #ffcc00;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
   }
   main {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 0 20px;
+    max-width: 960px;
+    margin: 30px auto 50px auto;
+    padding: 0 15px;
   }
-  section {
-    margin-bottom: 40px;
-  }
-  h1, h2 {
-    color: #003366;
-    margin-bottom: 15px;
-  }
-  p {
-    margin-bottom: 15px;
-  }
-  /* Diaporama images */
+  /* Diaporama */
   .slideshow {
+    max-width: 900px;
+    height: 400px;
+    margin: 0 auto 40px auto;
     position: relative;
-    max-width: 100%;
-    height: 350px;
-    margin-bottom: 40px;
+    border-radius: 12px;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    background: #222;
   }
   .slideshow img {
     width: 100%;
-    height: 350px;
-    object-fit: cover;
+    height: 400px;
+    object-fit: contain;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 1.2s ease-in-out;
   }
   .slideshow img.active {
     opacity: 1;
     position: relative;
+    transform: translate(0, 0);
   }
   /* Formulaire */
   form {
     background: white;
     padding: 25px 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     max-width: 500px;
-    margin: 0 auto 60px auto;
+    margin: 0 auto;
   }
   form label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     font-weight: 600;
-    color: #003366;
+    color: #004080;
   }
-  form input, form textarea {
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
     width: 100%;
     padding: 10px 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
+    margin-bottom: 18px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
     font-family: inherit;
+    transition: border-color 0.3s;
+  }
+  form input[type="text"]:focus,
+  form input[type="email"]:focus,
+  form textarea:focus {
+    outline: none;
+    border-color: #004080;
+    background-color: #f0f7ff;
+  }
+  form textarea {
     resize: vertical;
+    min-height: 120px;
   }
   form button {
-    background: #003366;
+    background-color: #004080;
     color: white;
     border: none;
-    padding: 12px 20px;
-    font-size: 1.1rem;
+    padding: 14px 25px;
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background 0.3s;
+    width: 100%;
+    transition: background-color 0.3s;
   }
   form button:hover {
-    background: #0059b3;
+    background-color: #003060;
   }
-  footer {
-    text-align: center;
-    padding: 15px 10px;
-    background: #003366;
-    color: white;
-    font-size: 0.9rem;
+  /* Messages */
+  .message-success {
+    max-width: 500px;
+    margin: 10px auto 30px auto;
+    padding: 15px 20px;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 1.5px solid #c3e6cb;
+  }
+  .message-error {
+    max-width: 500px;
+    margin: 10px auto 30px auto;
+    padding: 15px 20px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 1.5px solid #f5c6cb;
   }
   /* Responsive */
   @media (max-width: 600px) {
-    header {
-      font-size: 1.4rem;
-    }
-    nav {
-      flex-direction: column;
-      gap: 10px;
-    }
     .slideshow {
-      height: 220px;
+      height: 250px;
     }
     .slideshow img {
-      height: 220px;
+      height: 250px;
+    }
+    header {
+      font-size: 1.8em;
+      padding: 15px 0;
+    }
+    form {
+      padding: 20px;
     }
   }
 </style>
@@ -143,89 +177,61 @@
 <body>
 
 <header>
-  Vente et Achat de Machines Industrielles
+  Machines Industrielles à Vendre
 </header>
 
-<nav>
-  <a href="#presentation">Présentation</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<div class="slideshow" aria-label="Diaporama images machines industrielles">
-  <img src="image0.png" alt="Machine industrielle modèle 0" class="active" />
-  <img src="sdmo.jpg" alt="Groupe électrogène SDMO" />
-  <img src="AMADA.jpg" alt="Machine AMADA" />
-  <img src="hurco.jpg" alt="Machine Hurco" />
-</div>
-
 <main>
-  <section id="presentation">
-    <h1>Présentation</h1>
-    <p>
-      Nous sommes spécialisés dans la vente et l'achat de machines industrielles, groupes électrogènes, compresseurs, transformateurs, moteurs industriels, éoliennes et équipements lourds industriels neufs ou d'occasion.  
-    </p>
-    <p>
-      Notre expérience nous permet de vous proposer des équipements fiables, adaptés à vos besoins, avec un service professionnel et personnalisé.
-    </p>
-  </section>
 
-  <section id="services">
-    <h2>Nos Services</h2>
-    <p>
-      - Vente de machines neuves et d'occasion<br />
-      - Reprise et rachat de matériel industriel<br />
-      - Conseils techniques et accompagnement personnalisé<br />
-      - Livraison et installation sur site
-    </p>
-  </section>
+  <!-- Diaporama -->
+  <div class="slideshow" aria-label="Diaporama machines industrielles">
+    <img src="image0.png" alt="Machine industrielle modèle 0" class="active" />
+    <img src="sdmo.jpg" alt="Groupe électrogène SDMO" />
+    <img src="AMADA.jpg" alt="Machine AMADA" />
+    <img src="hurco.jpg" alt="Machine Hurco" />
+  </div>
 
-  <section id="contact">
-    <h2>Contactez-nous</h2>
-    <form method="POST" action="mailto:tonemail@domaine.com" enctype="text/plain" onsubmit="return validateForm()">
-      <label for="nom">Nom complet *</label>
-      <input type="text" id="nom" name="nom" required placeholder="Votre nom complet" />
-      
-      <label for="email">Adresse e-mail *</label>
-      <input type="email" id="email" name="email" required placeholder="Votre e-mail" />
-      
-      <label for="message">Message *</label>
-      <textarea id="message" name="message" rows="5" required placeholder="Votre message"></textarea>
-      
-      <button type="submit">Envoyer</button>
-    </form>
-  </section>
+  <!-- Message de retour formulaire -->
+  <?php if (!empty($success)): ?>
+    <div class="message-success" role="alert"><?= htmlspecialchars($success) ?></div>
+  <?php elseif (!empty($error)): ?>
+    <div class="message-error" role="alert"><?= htmlspecialchars($error) ?></div>
+  <?php endif; ?>
+
+  <!-- Formulaire de contact -->
+  <form method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" novalidate>
+    <label for="nom">Nom complet *</label>
+    <input type="text" id="nom" name="nom" required autocomplete="name" />
+
+    <label for="email">Adresse e-mail *</label>
+    <input type="email" id="email" name="email" required autocomplete="email" />
+
+    <label for="message">Message *</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+
 </main>
 
-<footer>
-  &copy; 2025 Machines Industrielles - Tous droits réservés
-</footer>
-
 <script>
-  // Diaporama automatique
+  // Diaporama simple
   let slideIndex = 0;
   const slides = document.querySelectorAll('.slideshow img');
 
   function showSlides() {
-    slides.forEach((slide) => slide.classList.remove('active'));
+    slides.forEach((slide) => {
+      slide.classList.remove('active');
+      slide.style.position = 'absolute';
+      slide.style.transform = 'translate(-50%, -50%)';
+    });
     slideIndex++;
     if (slideIndex > slides.length) slideIndex = 1;
     slides[slideIndex - 1].classList.add('active');
-    setTimeout(showSlides, 4000);
+    slides[slideIndex - 1].style.position = 'relative';
+    slides[slideIndex - 1].style.transform = 'translate(0, 0)';
+    setTimeout(showSlides, 4500);
   }
   showSlides();
-
-  // Validation simple formulaire
-  function validateForm() {
-    const nom = document.getElementById('nom').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    if (!nom || !email || !message) {
-      alert('Merci de remplir tous les champs obligatoires.');
-      return false;
-    }
-    return true;
-  }
 </script>
 
 </body>
