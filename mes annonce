@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMPS - Déposer une Annonce / Mes Annonces</title>
+  <meta name="google-site-verification" content="s4qxWzklvSeMPuz3khdM8inomvwwSjgB6yWW9_DOR3c" />
+  <meta name="google-site-verification" content="google32ae22b12fca4cee" />
+  <style>
+    /* Réutilise tes styles existants + quelques ajouts */
+    body { font-family: Arial, sans-serif; margin:0; background:#f4f4f4; color:#333; }
+    header { background:#0056A3; color:white; padding:20px; text-align:center; position:relative; }
+    .logo { position:fixed; top:10px; left:10px; z-index:1000; }
+    .logo img { height:80px; border-radius:50%; }
+    nav { background:#333; padding:10px; display:flex; flex-wrap:wrap; justify-content:center; }
+    nav a { color:white; text-decoration:none; padding:10px 15px; margin:5px; }
+    nav a:hover { background:#444; }
+    section { max-width:1200px; margin:auto; padding:20px; background:white; margin-top:20px; border-radius:8px; }
+    form { display:flex; flex-direction:column; gap:15px; max-width:600px; margin:auto; }
+    input, textarea { padding:12px; border:1px solid #ccc; border-radius:5px; font-size:1em; }
+    button { background:#0056A3; color:white; border:none; padding:12px; cursor:pointer; font-weight:bold; }
+    button:hover { background:#003d73; }
+    footer { text-align:center; padding:20px; background:#0056A3; color:white; margin-top:40px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="image0.png" alt="Logo AMPS">
+  </div>
+  <h1>AMPS - Machines Industrielles d’Occasion</h1>
+  <p>Déposer une annonce ou consulter les machines disponibles</p>
+</header>
+
+<nav>
+  <a href="index.html#home">Accueil</a>
+  <a href="index.html#machines">Nos Machines</a>
+  <a href="annonces.html">Annonces</a>
+  <a href="index.html#about">À propos</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+
+<section>
+  <h2>Déposer une Annonce</h2>
+  <p>Pour proposer une machine à vendre ou demander un rachat, remplis ce formulaire. Je te réponds sous 24-48h.</p>
+  
+  <form action="https://formsubmit.co/amps.materiel@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://amps-materiel.github.io/AMPS-Site/merci.html"> <!-- crée une page merci.html simple après -->
+    <input type="hidden" name="_subject" value="Nouvelle Annonce Machine - AMPS">
+
+    <label for="nom">Ton nom / Société *</label>
+    <input type="text" id="nom" name="Nom" required>
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="Email" required>
+
+    <label for="tel">Téléphone</label>
+    <input type="tel" id="tel" name="Téléphone">
+
+    <label for="type">Type d'action *</label>
+    <select id="type" name="Type" required>
+      <option value="">Choisir...</option>
+      <option value="vendre">Je vends une machine</option>
+      <option value="rachat">Je veux faire racheter ma machine</option>
+      <option value="info">Demande d'info sur une machine en vente</option>
+    </select>
+
+    <label for="machine">Description de la machine (marque, modèle, année, état, prix souhaité...)</label>
+    <textarea id="machine" name="Description" rows="6" required placeholder="Ex: Presse plieuse Amada HFE 100-3, 2001, très bon état, prix 21000€..."></textarea>
+
+    <label for="photos">Liens vers photos (ImgBB, Postimages, Google Drive partagé...)</label>
+    <textarea id="photos" name="Photos" rows="3" placeholder="Colle ici 1 à 5 liens directs vers les images"></textarea>
+
+    <button type="submit">Envoyer ma demande / Annonce</button>
+  </form>
+
+  <p style="margin-top:30px; font-size:0.9em; color:#555;">
+    <strong>Photos :</strong> utilise un site gratuit comme <a href="https://imgbb.com/" target="_blank">ImgBB</a>, <a href="https://postimages.org/" target="_blank">Postimages</a> ou <a href="https://imgbox.com/" target="_blank">Imgbox</a> → prends les liens "direct" ou "embed".
+  </p>
+</section>
+
+<footer>
+  © 2026 AMPS - Anthony ZOTOFF | 06 81 61 00 32 | amps.materiel@gmail.com
+</footer>
+
+</body>
+</html>
